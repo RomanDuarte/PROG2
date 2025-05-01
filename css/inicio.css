@@ -1,0 +1,68 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tarjeta {
+    width: 380px;
+    min-height: 500px; /* Altura aumentada */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 30px 25px;
+    border-left: 4px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido arriba */
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #6b97bf;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 18px;
+    border: 1px solid #000;
+}
+
+.nombre {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.saldo {
+    background-color: #6b97bf;
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.saldo h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+}
+
+.monto {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #111;
+}
