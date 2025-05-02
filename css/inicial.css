@@ -1,0 +1,19 @@
+*{
+    background-color: rgb(112, 112, 112);
+}
+#logo{
+    margin-left: 500px;
+    align-items: center;
+}
+#home_logo{
+   /* padding-left: 600px;
+    align-items: center;*/
+    text-align: center;
+}
+.Button_new_account{
+    text-align: center;
+    font-size: 150px;
+}
+.Button_acces_account{
+    text-align: center;
+}
