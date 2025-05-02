@@ -1,19 +1,49 @@
 *{
-    background-color: rgb(112, 112, 112);
+    background-color: #fcfcfc;
 }
 #logo{
     margin-left: 500px;
-    align-items: center;
+    align-items: center; 
 }
+
 #home_logo{
-   /* padding-left: 600px;
-    align-items: center;*/
     text-align: center;
 }
 .Button_new_account{
     text-align: center;
     font-size: 150px;
 }
-.Button_acces_account{
+#titulo{
     text-align: center;
+    color: #fcfcfc;
+    font-family: arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-text-stroke: 2px black;
+    height: 100px;
+}
+#A{
+    color:#6b97bf ;
+}
+#G {
+    color:#6b97bf ;
+}
+#Button_acces_account{
+    text-align: center;
+    font-family: arial, sans-serif;
+    color: inherit;
+}
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+#Button_new_account{
+    font-family: arial, sans-serif;
+    background-color:#6b97bf;
+    font-size: 50px;
+    color: #fcfcfc;
+    border-radius: 80px;
+    padding: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
