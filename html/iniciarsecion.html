@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Iniciar Sesión</title>
+<link rel="stylesheet" href="/css/iniciarsecion.css"/>
+</head>
+<body>
+<div class="login-container">
+    <h2>Iniciar sesión</h2>
+    <p>Introduce tu correo y contraseña para continuar</p>
+
+    <form action="/html/inicio.html" method="get">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="Ingrese su correo" required />
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Ingrese su contraseña" required />
+        <button class="enviar" type="submit">Continuar</button>
+    </form>
+
+    <p class="terms">
+    Al continuar aceptas los <a href="#">Términos y Condiciones</a> y nuestra <a href="#">Política de privacidad</a>.
+    </p>
+</div>
+</body>
+</html>
