@@ -1,13 +1,13 @@
-body {
+.container{
     font-family: 'Segoe Ui', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     margin: 0;
     background-color: #fff;
+    flex-direction: column;
 }
-
 .contenedor {
     width: 90%;
     max-width: 400px;
@@ -57,7 +57,10 @@ input[type="email"] {
     cursor: pointer;
     margin-bottom: 30px;
 }
-
+#flechita{
+    width: 10%;
+    margin-bottom: 110px;
+}
 .terminos {
     font-size: 13px;
     color: #333;
@@ -67,4 +70,47 @@ input[type="email"] {
 .terminos a {
     color: #4091c8;
     text-decoration: none;
+}
+#Banda-celeste-sup{
+    display: flex;
+    flex-direction: row;
+    background-color:#6b97bf ;
+    text-align: left;
+    color: #fcfcfc;
+    font-family: arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    height: 50px;
+    border-top: 5px;
+    -webkit-text-stroke: 2px black;
+    border: 0px;
+}
+#Logo{
+    margin-left: 35px;
+    width: 50px;
+    
+}
+#name{
+    margin-top: 9px;
+    margin-left: 10px;
+    height: 5px;
+}
+#banda-celeste-inf{
+    background-color: #6b97bf;
+    height: 50px;
+    
+}
+#fondo1{
+    margin-top: 80px;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 80%;
+}
+#xd{
+    display: flex;
+    flex-direction: row;
+}
+#fondo1-container{
+    width: 38%;
+    height: 85vh;
 }
