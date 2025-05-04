@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: arial, sans-serif;
+}
+form {
+  padding: 50px 50px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 0 20px;
+  margin-top: 20px;
+}
+
+form h1 {
+  color: #3b8ec2;
+  text-align: left;
+}
+form p {
+  font-size: 20px;
+  text-align: left;
+}
+
+.inputDatos {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.inputDatos label {
+  font-weight: bold;
+}
+
+.inputDatos input {
+  background-color: #d6d6d6;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.inputDatos select {
+  background-color: #d6d6d6;
+  border: none;
+  padding: 10px;
+}
+
+.inputDatos button {
+  background-color: #3b8ec2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+}

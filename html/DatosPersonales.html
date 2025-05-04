@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/datosPersonales.css" />
+    <link rel="icon" href="/Img/Logo Icono.svg" />
+    <title>Datos personales</title>
+  </head>
+
+  <body>
+    <form action="./inicio.html" method="get">
+      <h1>Sus datos personales</h1>
+      <p>Contanos un poco sobre ti...</p>
+      <div class="inputDatos">
+        <label for="primerNombre">Nombre/s</label>
+        <br />
+        <input type="text" id="primerNombre" name="primerNombre" required />
+        <br /><br />
+        <label for="apellido">Apellido/s</label>
+        <br />
+        <input type="text" id="apellido" name="apellido" required />
+        <br /><br />
+        <label for="fechaNac">Fecha de nacimiento</label>
+        <br />
+        <input type="date" id="fechaNac" name="fechaNac" required />
+        <br /><br />
+        <label for="paises">Genero</label>
+        <br />
+        <select name="Genero" id="Genero" required>
+          <option value="">Femenino</option>
+          <option value="">Masculino</option>
+        </select>
+        <br /><br />
+        <label for="estadoCivil">Estado Civil</label>
+        <br />
+        <select name="estadoCivil" id="estadoCivil" required>
+          <option value="">Soltero</option>
+          <option value="">Casado</option>
+        </select>
+        <br /><br />
+        <button type="submit">Continuar</button>
+      </div>
+      <div class="footerDatos">
+        <footer>.</footer>
+      </div>
+    </form>
+  </body>
+</html>

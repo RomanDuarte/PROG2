@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/Img/Logo Icono.svg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Img/Logo Icono.svg" />
     <title>Verificacion de correo</title>
-    <link rel="stylesheet" href="/css/VcorreoE.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/VcorreoE.css" />
+  </head>
+  <body>
     <div class="container">
-
-        <header>
+      <header>
         <h1>Verifique su correo electronico</h1>
         <p class="subtitulo">Te enviaremos un código de confirmación</p>
-        </header>
-    
-        <main>
-            <form action="/html/inicio.html" method="get">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" placeholder="Ingrese su correo" required />
-                <a href="/html/inicio.html"><button class="boton-continuar">Continuar</button></a>
-            </form>
-        
-        </main>
-    
-        <footer>
+      </header>
+
+      <main>
+        <form action="/html/DatosPersonales.html" method="get">
+          <label for="email">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Ingrese su correo"
+            required
+          />
+          <a href="/html/DatosPersonales.html"
+            ><button class="boton-continuar">Continuar</button></a
+          >
+        </form>
+      </main>
+
+      <footer>
         <p class="terminos">
-            Al continuar acepta los
-            <a href="#">Términos y Condiciones</a>
-            y nuestra
-            <a href="#">Política de privacidad</a>
+          Al continuar acepta los
+          <a href="#">Términos y Condiciones</a>
+          y nuestra
+          <a href="#">Política de privacidad</a>
         </p>
-        </footer>
-    
+      </footer>
     </div>
-</body>
+  </body>
 </html>
