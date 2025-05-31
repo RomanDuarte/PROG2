@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Imagenes/Logo.ico" />
+    <title>Verificacion de correo</title>
+    <link rel="stylesheet" href="/Css/Style.css">
+</head>
+<header>
+    <div id="banda_celeste">
+    <img id="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
+    <span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
+</header>
+<body>
+        <div id="mapa_mundo">
+            <div id="fondo_mundo">
+                <img id="fondo_mundo_izquierda" src="/Imagenes/Mapa Mundo Izquierda.svg" alt="Foto medio mundo" srcset="">
+            </div>
+            <div class="container">
+                <header>
+                <a href="/Html/pagina_principal.html"><img id="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="retroceso" srcset=""></a>
+                <h1>Verifique su correo electronico</h1>
+                <p class="subtitulo">Te enviaremos un código de confirmación</p>
+                </header>
+                <main>
+                    <form action="/Html/datos_personales.html" method="get">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="Ingrese su correo" required />
+                        <a href="/Html/datos_personales.html"><button class="continuar">Continuar</button></a>
+                    </form>
+                </main>
+                <footer>
+                <p class="terminos">
+                    Al continuar acepta los
+                    <a href="#">Términos y Condiciones</a>
+                    y nuestra
+                    <a href="#">Política de privacidad</a>
+                </p>
+                </footer>
+            </div>
+            <div id="fondo_mundo">
+                <img id="fondo_mundo_derecha" src="/Imagenes/Mapa Mundo Derecha.svg" alt="Foto medio mundo" srcset="">    
+            </div>
+        </div>
+        <div id="banda_celeste"></div>
+</body>
+</html>
