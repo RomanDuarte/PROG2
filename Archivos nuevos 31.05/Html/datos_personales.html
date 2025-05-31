@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Imagenes/Logo.ico" />
+    <title>Datos Personales</title>
+    <link rel="stylesheet" href="/Css/Style.css">
+</head>
+<header>
+    <div id="banda_celeste">
+    <img id="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
+    <span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
+</header>
+<body>
+        <div id="mapa_mundo">
+            <div id="fondo_mundo">
+                <img id="fondo_mundo_izquierda" src="/Imagenes/Mapa Mundo Izquierda.svg" alt="Foto medio mundo" srcset="">
+            </div>
+            <div class="container">
+                <header>
+                <a href="/Html/pagina_principal.html"><img id="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="retroceso" srcset=""></a>
+                <h1>Datos Personales</h1>
+                <p class="subtitulo">Contanos un poco más sobre vos</p>
+                </header>
+                <main>
+                    <form action="/Html/pais_resicencia.html" method="get">
+      <div class="datos_personales">
+        <label for="primer_nombre">Nombre/s</label>
+        <br />
+        <input type="text" id="primer_nombre" name="primer_nombre" required />
+        <br /><br />
+        <label for="apellido">Apellido/s</label>
+        <br />
+        <input type="text" id="apellido" name="apellido" required />
+        <br /><br />
+        <label for="fecha_nacimiento">Fecha de nacimiento</label>
+        <br />
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
+        <br /><br />
+        <label for="genero">Genero</label>
+        <br />
+        <select name="genero" id="genero" required>
+            <option value="">  </option>
+          <option value="">Femenino</option>
+          <option value="">Masculino</option>
+          <option value="">No binario</option>
+        </select>
+        <br /><br />
+        <label for="estado_civil">Estado Civil</label>
+        <br />
+        <select name="estado_civil" id="estado_civil" required>
+            <option value="">  </option>
+            <option value="">Casado</option>
+            <option value="">Divorciado</option>
+            <option value="">Soltero</option>
+            <option value="">Viudo</option>
+        </select>
+        <br /><br />
+
+    </form>
+  </body>
+                        <a href="/Html/pais_resicencia.html"><button class="continuar">Continuar</button></a>
+                    </form>
+                </main>
+            </div>
+            <div id="fondo_mundo">
+                <img id="fondo_mundo_derecha" src="/Imagenes/Mapa Mundo Derecha.svg" alt="Foto medio mundo" srcset="">    
+            </div>
+        </div>
+        <div id="banda_celeste"></div>
+</body>
+</html>
