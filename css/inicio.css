@@ -133,3 +133,59 @@ a{
 .Boton-varios:hover{
     background-color: #3f85c7;
 }
+@media (max-width: 600px) {
+    body {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .tarjeta {
+      width: 100%;
+      min-height: auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border-left: none;
+      border-top: 4px solid #333;
+    }
+  
+    .encabezado {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .avatar {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .saldo {
+      padding: 15px;
+    }
+  
+    .boton-transferencia,
+    .Boton-varios {
+      width: 100%;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+  
+    #botones-varios {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .menu-inferior {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .botones-menu {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
+  

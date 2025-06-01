@@ -130,3 +130,71 @@ input[type="email"] {
     min-height: 18px; /* para evitar saltos cuando aparece y desaparece */
     display: block;
 }
+
+@media (max-width: 600px) {
+  .container {
+    height: auto; /* Que no limite la altura */
+    padding: 20px 10px;
+  }
+
+  .contenedor {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+    box-shadow: none; /* Opcional para menos carga visual en móvil */
+  }
+
+  #flechita {
+    width: 20%;
+    margin-bottom: 40px;
+  }
+
+  #Banda-celeste-sup {
+    font-size: 20px;
+    height: 40px;
+    -webkit-text-stroke: 1.5px black;
+    padding-left: 10px;
+  }
+
+  #Logo {
+    margin-left: 15px;
+    width: 40px;
+  }
+
+  #name {
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  #banda-celeste-inf {
+    height: 40px;
+  }
+
+  #fondo1-container {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: none;
+  }
+
+  #xd {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  input[type="email"] {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .boton-continuar {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .terminos {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}

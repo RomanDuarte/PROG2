@@ -71,3 +71,32 @@ form p {
   background-color: #ffecec;
   outline: none;
 }
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  form h1, form p {
+    text-align: center;
+  }
+
+  .inputDatos input,
+  .inputDatos select,
+  .inputDatos button {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .inputDatos {
+    text-align: left;
+  }
+}
+

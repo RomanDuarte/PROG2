@@ -82,4 +82,40 @@ input {
       margin-top: -10px;
       margin-bottom: 10px;
   }
+
+  @media (max-width: 600px) {
+    body {
+      flex-direction: column;
+      padding: 20px;
+      height: auto;
+    }
+  
+    .login-container {
+      max-width: 100%;
+      padding: 0 15px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    p {
+      font-size: 16px;
+    }
+  
+    input,
+    .enviar {
+      font-size: 15px;
+      padding: 12px;
+    }
+  
+    .terms {
+      font-size: 12px;
+    }
+  
+    #error-mail,
+    #error-password {
+      font-size: 13px;
+    }
+  }
   
