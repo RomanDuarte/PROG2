@@ -1,7 +1,17 @@
-// const formulario = document.getElementById('formulario');
-// formulario.addEventListener('submit', function(e) {
-// e.preventDefault();
-// })
+/* document.getElementById("formulario").addEventListener("submit", function (e) {
+    // Ejecutar validaciones antes de enviar
+    validarEmail();
+    validarContra();
+
+    // Revisar si hay errores visibles
+    const errorEmail = document.getElementById("error-mail").textContent;
+    const errorContra = document.getElementById("error-password").textContent;
+
+    if (errorEmail !== "" || errorContra !== "") {
+        e.preventDefault(); // Evita que el formulario se envíe
+        alert("Por favor completá correctamente todos los campos.");
+    }
+}); //evita que se envie si hay errores// */
 
 // validar email
 function validarEmail(){

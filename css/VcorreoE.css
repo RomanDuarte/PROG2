@@ -114,3 +114,19 @@ input[type="email"] {
     width: 38%;
     height: 85vh;
 }
+
+.input-error {
+    border: 1px solid red;
+    outline: none;
+}
+
+  /* Estilo para el mensaje de error, para que se note pero no moleste */
+#error-mail {
+    color: #e74c3c;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    min-height: 18px; /* para evitar saltos cuando aparece y desaparece */
+    display: block;
+}

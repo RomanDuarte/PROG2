@@ -68,3 +68,18 @@ input {
     color: #3b8ec2;
     text-decoration: none;
 }
+
+.input-error {
+    border: 1px solid red;
+    outline: none;
+}
+
+  #error-mail,
+  #error-password {
+      color: red;
+      font-size: 14px;
+      text-align: left;
+      margin-top: -10px;
+      margin-bottom: 10px;
+  }
+  

@@ -54,3 +54,20 @@ form p {
   cursor: pointer;
   margin-top: 20px;
 }
+
+/* Estilos para mensajes de error */
+#error-nombre,
+#error-apellido {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Estilo para inputs con error */
+.input-error {
+  border: 2px solid red !important;
+  background-color: #ffecec;
+  outline: none;
+}
