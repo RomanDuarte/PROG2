@@ -5,38 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/datosPersonales.css" />
     <link rel="icon" href="/Img/Logo Icono.svg" />
+    <script src="/Js/ValidarDatosPer.js" defer></script>
     <title>Datos personales</title>
   </head>
 
   <body>
-    <form action="./inicio.html" method="get">
+    <form id="formulario" action="./inicio.html" method="get">
       <h1>Sus datos personales</h1>
       <p>Contanos un poco sobre ti...</p>
       <div class="inputDatos">
         <label for="primerNombre">Nombre/s</label>
         <br />
-        <input type="text" id="primerNombre" name="primerNombre" required />
+        <input type="text" id="primerNombre" name="primerNombre" />
+        <span id="error-nombre"></span>
         <br /><br />
         <label for="apellido">Apellido/s</label>
         <br />
-        <input type="text" id="apellido" name="apellido" required />
+        <input type="text" id="apellido" name="apellido"  />
+        <span id="error-apellido"></span>
         <br /><br />
         <label for="fechaNac">Fecha de nacimiento</label>
         <br />
-        <input type="date" id="fechaNac" name="fechaNac" required />
+        <input type="date" id="fechaNac" name="fechaNac"  />
         <br /><br />
         <label for="paises">Genero</label>
         <br />
-        <select name="Genero" id="Genero" required>
-          <option value="">Femenino</option>
-          <option value="">Masculino</option>
+        <select name="Genero" id="Genero" >
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
         </select>
         <br /><br />
         <label for="estadoCivil">Estado Civil</label>
         <br />
-        <select name="estadoCivil" id="estadoCivil" required>
-          <option value="">Soltero</option>
-          <option value="">Casado</option>
+        <select name="estadoCivil" id="estadoCivil" >
+          <option id="opcion1" value="Soltero/a"></option>
+          <option id="opcion2" value="Casado/a"></option>
         </select>
         <br /><br />
         <button type="submit">Continuar</button>

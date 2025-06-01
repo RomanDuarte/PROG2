@@ -6,6 +6,7 @@
     <link rel="icon" href="/Img/Logo Icono.svg" />
     <title>Verificacion de correo</title>
     <link rel="stylesheet" href="/css/VcorreoE.css">
+    <script src="/Js/VerificacionEmail.js" defer></script>
 </head>
 <header>
     <div id="Banda-celeste-sup">
@@ -25,9 +26,10 @@
                 <p class="subtitulo">Te enviaremos un código de confirmación</p>
                 </header>
                 <main>
-                    <form action="/html/DatosPersonales.html" method="get">
+                    <form id="formulario" action="/html/DatosPersonales.html" method="get">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" placeholder="Ingrese su correo" required />
+                        <input type="email" id="email" placeholder="Ingrese su correo"  />
+                        <span id="error-mail"></span>
                         <a href="/html/DatosPersonales.html"><button class="boton-continuar">Continuar</button></a>
                     </form>
                 </main>
