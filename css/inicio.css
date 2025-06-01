@@ -66,3 +66,53 @@ body {
     letter-spacing: 1px;
     color: #111;
 }
+
+.boton-transferencia{
+    background-color: #6b97bf;
+    border-radius: 5mm;
+    color: white;
+    margin-top: 5mm;
+    margin-right: 5mm;
+    padding-left: 5mm;
+    padding-right: 5mm;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+}
+#boton-transferir{
+    background-color: white;
+    color: #000000;
+}
+#botones-varios{
+    text-align: center;
+    
+}
+.Boton-varios{
+    background-color: #6b97bf;
+    border-radius: 1mm;
+    color: white;
+    font-weight: bold;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    justify-content: center;
+    margin-right: 0.3rem;
+    border: 1px solid #000;
+}
+.menu-inferior{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #6b97bf;
+    border-color: #000;
+    border: 1px solid #000;
+}
+.botones-menu{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: white;
+    
+}
