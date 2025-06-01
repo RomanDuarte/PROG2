@@ -1,7 +1,19 @@
-// const formulario = document.getElementById('formulario');
-// formulario.addEventListener('submit', function(e) {
-// e.preventDefault();
-// })
+document.getElementById("formulario").addEventListener("submit", function (e) {
+    // Ejecutar validaciones antes de enviar
+    validarNombre();
+    validarApellido();
+    estadoCivil();
+
+    // Revisar si hay errores visibles
+    const errorNombre = document.getElementById("error-nombre").textContent;
+    const errorApellido = document.getElementById("error-apellido").textContent;
+
+    if (errorNombre !== "" || errorApellido !== "") {
+        e.preventDefault(); // Evita que el formulario se envíe
+        alert("Por favor completá correctamente todos los campos.");
+    }
+
+});
 
 // validar Nombre
 function validarNombre(){

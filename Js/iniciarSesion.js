@@ -1,4 +1,4 @@
-/* document.getElementById("formulario").addEventListener("submit", function (e) {
+document.getElementById("formulario").addEventListener("submit", function (e) {
     // Ejecutar validaciones antes de enviar
     validarEmail();
     validarContra();
@@ -11,7 +11,7 @@
         e.preventDefault(); // Evita que el formulario se envíe
         alert("Por favor completá correctamente todos los campos.");
     }
-}); //evita que se envie si hay errores// */
+}); //evita que se envie si hay errores//
 
 // validar email
 function validarEmail(){

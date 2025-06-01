@@ -1,7 +1,15 @@
-// const formulario = document.getElementById('formulario');
-// formulario.addEventListener('submit', function(e) {
-// e.preventDefault();
-// })
+document.getElementById("formulario").addEventListener("submit", function (e) {
+    // Ejecutar validaciones antes de enviar
+    validarEmail();
+    // Revisar si hay errores visibles
+    const errorEmail = document.getElementById("error-mail").textContent;
+
+    if (errorEmail !== "") {
+        e.preventDefault(); // Evita que el formulario se envíe
+        alert("Por favor completá correctamente todos los campos.");
+    }
+
+});
 
 function validarEmail(){
     const email=document.getElementById("email").value.trim();
@@ -18,4 +26,4 @@ function validarEmail(){
     }
 }
 document.getElementById("email").addEventListener('input',validarEmail);
-document.getElementById("email").addEventListener('change',validarEmail);
+document.getElementById("email").addEventListener('blur',validarEmail);
