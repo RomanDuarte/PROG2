@@ -1,7 +1,7 @@
 Integrantes
 
 Martina Masanes
-Ulises
+Ulises Gunetti
 Franco Pascua
 Sergio Duarte
 
