@@ -29,7 +29,7 @@ function validarEmail(){
     }
 }
 document.getElementById("email").addEventListener('input',validarEmail);
-document.getElementById("email").addEventListener('change',validarEmail);
+document.getElementById("email").addEventListener('blur',validarEmail);
 
 //validar contraseña
 function validarContra(){
@@ -47,5 +47,5 @@ function validarContra(){
     }
 }
 document.getElementById("password").addEventListener('input',validarContra);
-document.getElementById("password").addEventListener('change',validarContra);
+document.getElementById("password").addEventListener('blur',validarContra);
 

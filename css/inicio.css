@@ -108,11 +108,17 @@ body {
     border-color: #000;
     border: 1px solid #000;
 }
+a{
+    text-decoration: none;
+    color: #f3f3f3;
+}
 .botones-menu{
     margin-right: 0.5rem;
     margin-left: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     color: white;
-    
+}
+.botones-menu:hover{
+    background-color: #548ec4;
 }
