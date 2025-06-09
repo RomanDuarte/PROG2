@@ -1,0 +1,9 @@
+
+flask
+flask-sqlalchemy
+flask-login
+flask-bootstrap
+flask-wtf
+werkzeug
+email_validator
+#pip install -r requirements.txt
