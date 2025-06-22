@@ -9,28 +9,33 @@
 </head>
 
 <header>
-  <div class="banda_celeste">
-  <img class="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
-  <span id="G">G</span>lobal<span id="A">A</span>rg</p>
-  </div>
+  <div class="banda_celeste"></div>
+
+    <div class="nombre_encabezado">
+        <img src="/Imagenes/Logo.svg" class="logo">
+        <div class="nombre_encabezado">
+            <span id="G">G</span>lobal<span id="A">A</span>rg
+        </div>
+    </div> 
 </header>
 
 <body id="pagina_web">
 
-  <div class="columna_imagen">
+  <div class="columna_imagen_izquierda">
     <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
   </div>
 
-  <div id="contenedor_principal">
-
-    <a href="/Html/correo_electronico.html">
-      <img id="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
-    </a>
-
-    <h1 class="titulo">Regulaciones</h1>
-    <p class="subtitulo">Elija las opciones que aplican a su caso</p>
+  <a href="/Html/correo_electronico.html">
+      <img class="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
+  </a>
 
     <form id="formulario" action="/Html/correo_electronico.html" method="get">
+
+      <div class="encabezado_formulario">
+            <h1 class="titulo">Regulaciones</h1>
+            <p class="subtitulo">Elija las opciones que aplican a su caso</p>
+      </div>
+
 
       <div class="formulario">
       
@@ -53,15 +58,13 @@
 
       </div>
       
-    </form>
+      <a href="/Html/pais_residencia.html" class="boton_continuar">Continuar</a>
 
-    <div class="boton_continuar">
-      <a href="/Html/usuario_clave.html"><button id="boton_continuar">Crear cuenta</button></a>
-    </div>
+    </form>
 
   </div>
 
-  <div class="columna_imagen">
+  <div class="columna_imagen_derecha">
     <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
   </div>
 
@@ -69,10 +72,7 @@
 </body>
 
 <footer>
-
   <div class="banda_celeste"></div>
-  <p>2025 GlobalArg. Todos los derechos reservados.</p>
-    
 </footer>
 
 </html>

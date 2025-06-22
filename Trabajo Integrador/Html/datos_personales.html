@@ -9,9 +9,15 @@
 </head>
 
 <header>
-    <div class="banda_celeste">
-    <img class="logo" src="/Imagenes/Logo.svg" alt="Logo" srcset="">
-    <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    <div class="banda_celeste"></div>
+
+    <div class="nombre_encabezado">
+        <img src="/Imagenes/Logo.svg" class="logo">
+        <div class="nombre_encabezado">
+            <span id="G">G</span>lobal<span id="A">A</span>rg
+        </div>
+    </div>
+
 </header>
  
 <body id="pagina_web">
@@ -42,7 +48,7 @@
 
                 <label for="apellido">Apellido/s</label>
                 <input type="text" id="apellido" name="apellido" required />
-                <span id="error_apellido"></span>
+                <span id="error_apellido"></span> 
 
                 <label for="fecha_nacimiento">Fecha de Nacimiento</label>
                 <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
@@ -68,9 +74,8 @@
                 <span id="error_estado_civil"></span>
             </div>  
             
-            <div>
-                <button type="submit" class="boton_continuar">Continuar</button>
-            </div>
+            <a href="/Html/pais_residencia.html" class="boton_continuar">Continuar</a>
+            
         </form> 
 
         <div class="columna_imagen_derecha">

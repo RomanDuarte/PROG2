@@ -14,36 +14,40 @@ body, html {
     height: 50px;
     width: 100%;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
 }
 
-.logo, .nombre_encabezado {
-    position: absolute;
+.nombre_encabezado {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    position: relative;
     z-index: 3;
 }
 
 .logo {
-    top: 5px;
-    left: 10px;
     height: 40px;
+    transform: translate(10px, 5px);
 }
 
 .nombre_encabezado {
-    top: -12px;
-    left: 60px;
     font-size: 20px;
-    color: #fcfcfc;
+    color:  #fcfcfc;
+    transform: translate(55px, -60px);
 }
 
 #G, #A {
     color: #fcfcfc;
     font-size: 24px;
+    vertical-align: middle;
+    line-height: 1;
+    position: relative;
+    top: -151px;
 }
 
 .contenedor_principal {
     position: relative;
     height: calc(100vh - 100px);
-    width: 100%;
 }
 
 .columna_imagen_izquierda, .columna_imagen_derecha {
@@ -68,15 +72,14 @@ body, html {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 30px;
-    margin-left: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(5px, 30px);
 }
 
 .formulario {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -350%);
     width: 450px;
     padding: 30px;
     border-radius: 10px;
@@ -93,9 +96,11 @@ body, html {
 
 .subtitulo {
     font-size: 16px;
-    color: #555;
+    color: #c7c6c6;
     margin: 5px 0 0 0;
+    width: 100%;
     transform: translate(490px, -40px);
+    word-wrap: break-word;
 }
 
 .fecha_retroceder {
@@ -114,27 +119,38 @@ body, html {
 input, select {
     width: 100%;
     padding: 8px;
-    background-color: #d6d6d6;
+    background-color: #c7c6c6;
     border: none;
     border-radius: 5px;
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: -150px;
     box-sizing: border-box;
     display: block;
+
 }
 
-button, .boton_continuar {
+span{
+    color: red;
+    font-size: 11px;
+    display: block;
+    transform: translateY(150px);
+}
+
+.boton_continuar {
     text-decoration: none;
-    transform: translate(415%, -50%);
+    display: block;
+    margin: 20px auto 15px auto;
     background-color: #3c98c3;
     color: #fcfcfc;
     border: none;
     border-radius: 5px;
     font-size: 18px;
-    padding: 5px;
+    padding: 8px 16px;
     cursor: pointer;
     width: 150px;
     text-align: center;
+    margin-top: 350px;
+    align-self: center;
 }
 
 footer {
@@ -143,7 +159,6 @@ footer {
     bottom: 0;
     z-index: 2;
     text-align: center;
-    background-color: #ffffff;
 }
 
 @media (max-width: 768px) {
