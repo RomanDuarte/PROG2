@@ -1,4 +1,4 @@
-document.getElementsById("formulario").addEventListener("submit", function (e) {
+document.getElementById("formulario").addEventListener("submit", function(e) {
     const usuarioValido = validarUsuario();
     const passwordValida = validarPassword();
 
@@ -6,6 +6,27 @@ document.getElementsById("formulario").addEventListener("submit", function (e) {
         e.preventDefault();
         alert("Por favor completá correctamente todos los campos.");
     }
+    const user=document.getElementById("usuario").value;
+const contra=document.getElementById("clave").value;
+
+fetch('/api/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ usuario: user, clave: contra })
+})
+.then(res => res.json())
+.then(data => {
+    if (data.status === 'ok') {
+        alert('Login correcto');
+        localStorage.setItem("nombre", data.nombre);
+        localStorage.setItem("apellidos", data.apellido);
+        localStorage.setItem("email", data.email);
+        localStorage.setItem("saldo", data.saldo);
+        window.location.href="/inicio";
+    } else {
+        alert('Login fallido');
+    }
+});
 });
 
 function validarUsuario() {
@@ -28,8 +49,8 @@ function validarUsuario() {
 
 
 function validarPassword() {
-    const contra = document.getElementById("password").value.trim();
-    const error = document.getElementById("error_password");
+    const contra = document.getElementById("clave").value.trim();
+    const error = document.getElementById("error_clave");
 
     if (contra === "") {
         error.textContent = "Debe ingresar una contraseña.";
@@ -46,5 +67,7 @@ function validarPassword() {
 document.getElementById("usuario").addEventListener('input', validarUsuario);
 document.getElementById("usuario").addEventListener('blur', validarUsuario);
 
-document.getElementById("password").addEventListener('input', validarPassword);
-document.getElementById("password").addEventListener('blur', validarPassword);
+document.getElementById("clave").addEventListener('input', validarPassword);
+document.getElementById("clave").addEventListener('blur', validarPassword);
+
+

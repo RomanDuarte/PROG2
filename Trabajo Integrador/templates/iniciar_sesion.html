@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/Imagenes/Logo.ico">
-    <link rel="stylesheet" href="/Css/style_iniciar_sesion.css">
+    <link rel="stylesheet" href="/static/css/style_iniciar_sesion.css">
     <title>GlobalArg</title>
 </head>
 
 <header>
     <div id="banda_celeste">
-    <img id="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
+    <img id="Logo" src="/static/img/Logo.svg" alt="Logo" srcset=""><p id="name">
     <span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
 </header>
@@ -18,34 +18,32 @@
 <body id="pagina_web">
 
     <div class="columna_imagen">
-        <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
     </div>
 
     <div id="contenedor_principal">
-
-        <form id="formulario" action="/Html/pagina_principal.html" method="get">
-
+        <form id="formulario"  method="get">
             <div class="formulario"">
             <label for="usuario">Usuario</label>
+            <span id="error_usuario"></span>
             <input type="text" id="usuario" name="usuario" required />
-
             <label for="clave">Clave</label>
             <input type="int" id="clave" name="clave" required />
+            <span id="error_clave"></span>
             </div>
-
+            <div class="boton_continuar">
+            <button type="submit" id="boton_continuar">Continuar</button>
+        </div>
         </form>
 
-        <div class="boton_continuar">
-            <a href="/Html/billetera.html"><button id="boton_continuar">Crear cuenta</button></a>
-        </div>
 
     </div>
 
     <div class="columna_imagen">
-        <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+        <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
     
-    <script src="/JavaScript/index_inicio_sesion.js"></script>
+    <script src="/static/js/index_inicio_sesion.js"></script>
 </body>
 
 <footer>

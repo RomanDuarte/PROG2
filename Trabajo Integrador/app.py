@@ -11,11 +11,11 @@ def index():
 
 @app.route('/login')
 def login():
-    return render_template('Iniciarsecion.html')
+    return render_template('iniciar_sesion.html')
 
 @app.route('/inicio')
 def inicio():
-    return render_template('inicio.html')
+    return render_template('billetera.html')
 
 @app.route('/transfer')
 def transfer():
@@ -25,19 +25,19 @@ def transfer():
 @app.route('/api/login', methods=['POST'])
 def api_login():
     data = request.json
-    usuario = data.get('usuario')
-    clave = data.get('clave')
+    usuario1 = data.get('usuario')
+    clave1 = data.get('clave')
     usuarios={
-    "francopascua7@gmail.com":{"password":"123456","nombre":"Franco","apellidos":"Pascua","saldo":5000},
-    "ulises1@gmail.com":{"password":"123456","nombre":"Ulises","apellidos":"","saldo":5000},
-    "martina1@gmail.com":{"password":"123456","nombre":"Martina","apellidos":"Masanes","saldo":7000}
+    "franco":{"password":"123456","nombre":"Franco","apellidos":"Pascua","saldo":5000},
+    "ulises":{"password":"123456","nombre":"Ulises","apellidos":"","saldo":5000},
+    "martina":{"password":"123456","nombre":"Martina","apellidos":"Masanes","saldo":7000}
     }
-    user=usuarios.get(usuario)
-    if user and user["password"]==clave :
+    user=usuarios.get(usuario1)
+    if user and user["password"]==clave1 :
         return jsonify({'status': 'ok',
                         "nombre":user["nombre"],
                         "apellido":user["apellidos"],
-                        "email":usuario,
+                        "email":usuario1,
                         "saldo":user["saldo"],
                         })
     return jsonify({'status': 'error'}), 401
