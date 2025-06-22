@@ -41,53 +41,54 @@ body, html {
 
 .contenedor_principal {
     flex: 1;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
 }
 
-.formulario {
-    width: 100%;
-    max-width: 500px;
-    background-color: #fcfcfc;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.fecha_retroceder {
+    width: 30px;
+    margin-bottom: 10px;
+    transform: translate(50px, -15px);
 }
 
 .encabezado_formulario {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
+    margin-top: -20px;
 }
 
 .titulo {
     font-size: 28px;
     font-weight: bold;
     color: #3b98c3;
-    margin: 0;
+    margin-left: 20px;
+    margin-top: 0px;
 }
 
 .titulo_2 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     color: #3b98c3;
-    margin: 10px 0 0;
+    margin-bottom: 5px;
+    margin-left: 10px;
+
 }
 
 .subtitulo {
     font-size: 16px;
     color: #555;
-    margin: 5px 0 0;
+    margin-top: -15px;
+    margin-left: 20px;
 }
 
-.subtitulo_2,
-ul,
+.subtitulo_2, ul,
 address {
-    font-size: 12px;
+    font-size: 14px;
     color: #555;
-    margin: 5px 0 0;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    margin-left: 10px;
 }
 
 footer {

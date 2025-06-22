@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" href="/Imagenes/Logo.ico"/>
     <link rel="stylesheet" href="/Css/stryle_datos_personales.css"/>
-    <script src="/JavaScript/index.js"></script>
     <title>GlobalArg</title>
 </head>
 
@@ -19,17 +18,18 @@
     
     <div class="contenedor_principal">
 
+        <div class="columna_imagen_izquierda">
+            <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        </div>
+
+        <a href="/Html/pagina_principal.html">
+            <img class="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
+        </a>
+
         <form id="formulario" action="/Html/pais_residencia.html" method="get">
             
-            <div class="columna_imagen_izquierda">
-            <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
-            </div>
 
-            <a href="/Html/pagina_principal.html">
-                <img class="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
-            </a>
-
-            <div class="encabezado_formulario"></div>
+            <div class="encabezado_formulario">
                 <h1 class="titulo">Datos Personales</h1>
                 <p class="subtitulo">- Contanos un poco más sobre vos</p>
             </div>
@@ -66,10 +66,12 @@
                         <option id= "opcion4"value="viudo">Viudo</option>
                     </select>
                 <span id="error_estado_civil"></span>
-            </div>        
+            </div>  
+            
+            <div>
+                <button type="submit" class="boton_continuar">Continuar</button>
+            </div>
         </form> 
-
-        <button type="submit" class="boton_continuar">Continuar</button>
 
         <div class="columna_imagen_derecha">
             <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
@@ -77,6 +79,7 @@
 
     </div>
 
+    <script src="/JavaScript/index_datos_personales.js"></script>
 </body>
 
 <footer>

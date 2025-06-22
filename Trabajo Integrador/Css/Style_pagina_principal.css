@@ -57,7 +57,7 @@ section {
     text-align: center;
     margin: 0;
     position: relative;
-    margin: 0 5px 0; /*arriba, derecha, abajo e izquierda*/
+    margin: -60px 5px 0; /*arriba, derecha, abajo e izquierda*/
 }
 
 .GlobalArg #G,
@@ -74,7 +74,7 @@ section {
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    margin: none;
+    margin-bottom: -100px;
 }
 
 .tengo_cuenta a button {
@@ -87,7 +87,7 @@ section {
     border: none;
     background-color: #fcfcfc;
     position: relative;
-    margin: none;
+    margin-top: -100px;
 }
 
 a, p {

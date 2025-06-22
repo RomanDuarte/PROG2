@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/Imagenes/Logo.ico" />
-    <link rel="stylesheet" href="/Trabajo Integrador/Css/styke_billetera.css">
+    <link rel="stylesheet" href="/Css/styke_billetera.css">
     <title>GlobalArg</title>
 </head>
 
 <header>
     <div class="banda__celeste"></div>
-    <img id="Logo" src="/Trabajo Integrador/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
+    <img id="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
     <span id="G">G</span>lobal<span id="A">A</span>rg</p>
 </header>
 
 <body id="pagina_web">
 
     <div class="columna_imagen">
-        <img src="/Trabajo Integrador/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
     </div>
 
     <div id="contenedor_principal">
@@ -25,13 +25,13 @@
         <form id="formulario" action="/Html/iniciar_sesion.html" method="get">
 
             <div class="encabezado">
-                <div class="avatar"></div>
-                <div class="nombre"></div>
+                <div class="avatar">NA</div>
+                <div class="nombre">Nombre Apellido</div>
             </div>
 
             <div class="saldo">
                 <h3>Saldo Total</h3>
-                <p class="monto"></p>
+                <p class="monto">123.456,78 ARS</p>
             </div>
 
             <div class="botones_redondos">
@@ -71,14 +71,6 @@
     <div class="columna_imagen">
         <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
-    <script>
-            document.getElementById("nombre+apellido").textContent =localStorage.getItem("nombre")+" "+localStorage.getItem("apellidos") ;
-            nombre=localStorage.getItem("nombre");
-            apellido=localStorage.getItem("apellidos");
-            nom_ape=nombre.charAt(0)+apellido.charAt(0);
-            document.getElementById("avatar").textContent =nom_ape
-            document.getElementById("monto").textContent =localStorage.getItem("saldo") +" "+ "ARS"
-    </script>
 
     </body>
 

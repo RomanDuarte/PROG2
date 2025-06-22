@@ -4,34 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/Imagenes/Logo.ico" />
-    <link rel="stylesheet" href="/Css/Style.css">
-    <script src="/JavaScript/index.js"></script>
+    <link rel="stylesheet" href="/Css/styke_domicilio.css">
     <title>GlobalArg</title>
 </head>
 
 <header>
-    <div id="banda_celeste">
-    <img id="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
-    <span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    <div class="banda_celeste">
+        <img class="logo" src="/Imagenes/Logo.svg" alt="Logo" srcset="">
+        <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
 </header>
 
 <body id="pagina_web">
 
-    <div class="columna_imagen">
-        <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
-    </div>
+    <div class="contenedor_principal">
 
-    <div id="contenedor_principal">
+        <div class="columna_imagen_izquierda">
+            <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        </div>
 
         <a href="/Html/pais_residencia.html">
-            <img id="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
+            <img class="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
         </a>
 
         <form id="formulario" action="/Html/pais_residencia.html" method="get">
 
-            <h1 class="titulo">Domicilio</h1>
-            <p class="subtitulo">Contanos donde vivís</p>
+            <div class="encabezado_formulario">
+                <h1 class="titulo">Domicilio</h1>
+                <p class="subtitulo">- Contanos donde vivís</p>
+            </div>
 
             <div class="formulario">
 
@@ -84,25 +85,25 @@
                 </select>
                 <span id="error_provincia"></span>
             </div>
+
+            <div class="boton_continuar">
+                <a href="/Html/correo_electronico.html"><button id="boton_continuar">Continuar</button></a>
+            </div>
         </form>
 
-        <div class="boton_continuar">
-            <a href="/Html/correo_electronico.html"><button id="boton_continuar">Continuar</button></a>
-        </div>
 
     </div>
 
-    <div class="columna_imagen">
+    <div class="columna_imagen_derecha">
         <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
 
+    <script src="/JavaScript/index_domicilio.js"></script>
+    
 </body>
 
 <footer>
-
     <div class="banda_celeste"></div>
-    <p>2025 GlobalArg. Todos los derechos reservados.</p>
-    
 </footer>
 
 </html>

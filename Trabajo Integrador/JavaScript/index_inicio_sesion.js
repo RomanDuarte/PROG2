@@ -48,27 +48,3 @@ document.getElementById("usuario").addEventListener('blur', validarUsuario);
 
 document.getElementById("password").addEventListener('input', validarPassword);
 document.getElementById("password").addEventListener('blur', validarPassword);
-
-
-const email1=document.getElementById("usuario").value;
-const contra1=document.getElementById("clave").value;
-
-
-fetch('/api/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ usuario: email1, clave: contra1 })
-})
-.then(res => res.json())
-.then(data => {
-    if (data.status === 'ok') {
-        alert('Login correcto');
-        localStorage.setItem("nombre", data.nombre);
-        localStorage.setItem("apellidos", data.apellido);
-        localStorage.setItem("email", data.email);
-        localStorage.setItem("saldo", data.saldo);
-        window.location.href="/inicio";
-    } else {
-        alert('Login fallido');
-    }
-});
