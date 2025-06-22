@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Rutas que cargan el HTML
 @app.route('/')
 def index():
-    return render_template('Inicial.html')
+    return render_template('pagina_principal.html')
 
 @app.route('/login')
 def login():

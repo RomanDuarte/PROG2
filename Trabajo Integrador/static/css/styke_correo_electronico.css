@@ -1,0 +1,154 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+}
+
+.banda_celeste {
+    background-color: #3b98c3;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.logo, .nombre_encabezado {
+    position: absolute;
+    z-index: 3;
+}
+
+.logo {
+    top: 5px;
+    left: 10px;
+    height: 40px;
+}
+
+.nombre_encabezado {
+    top: -12px;
+    left: 60px;
+    font-size: 20px;
+    color: #fcfcfc;
+}
+
+#G, #A {
+    color: #fcfcfc;
+    font-size: 24px;
+}
+
+.contenedor_principal {
+    position: relative;
+    height: calc(100vh - 100px);
+    width: 100%;
+}
+
+.columna_imagen_izquierda, .columna_imagen_derecha {
+    position: absolute;
+    top: 50%;
+    width: 850px;
+    height: auto;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.columna_imagen_izquierda {
+    left: -400px;
+}
+
+.columna_imagen_derecha {
+    right: -400px;
+}
+
+.encabezado_formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    margin-left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3b98c3;
+    margin: 0;
+    transform: translate(490px, -30px);
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 0 0;
+    transform: translate(490px, -40px);
+}
+
+.fecha_retroceder {
+    width: 30px;
+    margin-bottom: 10px;
+    transform: translate(490px, 50%);
+}
+
+.formulario label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    background-color: #d6d6d6;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    display: block;
+}
+
+a, p {
+    text-decoration: none; 
+    color: #fcfcfc;
+    font-size: 16px;
+    margin: 0px 5px;
+    padding-top: 25px;
+}
+
+button{
+    transform: translate(415%, -50%);
+    background-color: #3c98c3;
+    color: #fcfcfc;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    background-color: #ffffff;
+}
