@@ -72,4 +72,3 @@ fetch('/api/login', {
         alert('Login fallido');
     }
 });
-});
