@@ -1,0 +1,122 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+}
+
+.banda_celeste {
+    background-color: #3b98c3;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+}
+
+.logo, .nombre_encabezado {
+    position: absolute;
+    z-index: 3;
+}
+
+.logo {
+    top: 5px;
+    left: 10px;
+    height: 40px;
+}
+
+.nombre_encabezado {
+    top: -12px;
+    left: 60px;
+    font-size: 20px;
+    color: #fcfcfc;
+}
+
+#G, #A {
+    color: #fcfcfc;
+    font-size: 24px;
+}
+
+.contenedor_principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.formulario {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fcfcfc;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.encabezado_formulario {
+    margin-bottom: 30px;
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3b98c3;
+    margin: 0;
+}
+
+.titulo_2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3b98c3;
+    margin: 10px 0 0;
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+.subtitulo_2,
+ul,
+address {
+    font-size: 12px;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+    .contenedor_principal {
+        padding: 20px 10px;
+    }
+
+    .formulario {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .subtitulo,
+    .titulo_2,
+    .subtitulo_2 {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Imagenes/Logo.ico" />
+    <link rel="stylesheet" href="/Css/Style.css">
+    <script src="/JavaScript/index.js"></script>
+    <title>GlobalArg</title>
+</head>
+
+<header>
+    <div id="banda_celeste">
+    <img id="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
+    <span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
+</header>
+
+<body id="pagina_web">
+
+    <div class="columna_imagen">
+        <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+    </div>
+
+    <div id="contenedor_principal">
+
+        <a href="/Html/pais_residencia.html">
+            <img id="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
+        </a>
+
+        <form id="formulario" action="/Html/pais_residencia.html" method="get">
+
+            <h1 class="titulo">Domicilio</h1>
+            <p class="subtitulo">Contanos donde vivís</p>
+
+            <div class="formulario">
+
+                <label for="calle">Calle</label>
+                <input type="text" id="calle" name="calle" required />
+                <span id="error_calle"></span>
+            
+                <label for="altura">Altura</label>
+                <input type="int" id="altura" name="altura" required />
+                <span id="error_altura"></span>
+            
+                <label for="piso">Piso</label>
+                <input type="int" id="piso" name="psio" required />
+                <span id="error_piso"></span>
+            
+                <label for="depto">Depto</label>
+                <input type="text" id="depto" name="depto" required />
+                <span id="error_depto"></span>
+            
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" required />
+                <span id="error_ciudad"></span>
+
+                <label for="provincia">Provincia</label>
+                <select name="provincia" id="provincia" required>
+                    <option value="">  </option>
+                    <option value="">Buenos Aires</option>
+                    <option value="">Catamarca</option>
+                    <option value="">Chaco</option>
+                    <option value="">Chubut</option>
+                    <option value="">Córdoba</option>
+                    <option value="">Corrientes</option>
+                    <option value="">Entre Ríos</option>
+                    <option value="">Formosa</option>
+                    <option value="">Jujuy</option>
+                    <option value="">La Pampa</option>
+                    <option value="">La Rioja</option>
+                    <option value="">Mendoza</option>
+                    <option value="">Misiones</option>
+                    <option value="">Neuquén</option>
+                    <option value="">Río Negro</option>
+                    <option value="">Salta</option>
+                    <option value="">San Juan</option>
+                    <option value="">San Luis</option>
+                    <option value="">Santa Cruz</option>
+                    <option value="">Santa Fe</option>
+                    <option value="">Santiago del Estero</option>
+                    <option value="">Tierra del Fuego</option>
+                    <option value="">Tucumán</option>
+                </select>
+                <span id="error_provincia"></span>
+            </div>
+        </form>
+
+        <div class="boton_continuar">
+            <a href="/Html/correo_electronico.html"><button id="boton_continuar">Continuar</button></a>
+        </div>
+
+    </div>
+
+    <div class="columna_imagen">
+        <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+    </div>
+
+</body>
+
+<footer>
+
+    <div class="banda_celeste"></div>
+    <p>2025 GlobalArg. Todos los derechos reservados.</p>
+    
+</footer>
+
+</html>

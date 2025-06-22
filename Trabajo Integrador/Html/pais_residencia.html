@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Imagenes/Logo.ico" />
+    <link rel="stylesheet" href="/Css/Style.css">
+    <script src="/JavaScript/index.js"></script>
+    <title>GlobalArg</title>
+</head>
+
+<header>
+    <div id="banda_celeste">
+    <img id="Logo" src="/Imagenes/Logo.svg" alt="Logo" srcset=""><p id="name">
+    <span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
+</header>
+
+<body id="pagina_web">
+   
+    <div class="columna_imagen">
+        <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+    </div>
+
+    <div id="contenedor_principal">
+
+        <a href="/Html/datos_personales.html">
+            <img id="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
+        </a>
+
+        <h1 class="titulo">País de residencia</h1>
+        <p class="subtitulo">Necesitamos pedirte información para saber si puedes abrir una cuenta</p>
+
+        <form id="formulario" action="/Html/datos_personales.html" method="get">
+
+            <label for="pais">Pais de residencia</label>
+
+            <div class="formulario">
+
+                <select name="pais" id="pais" required>
+                    <option value="">  </option>
+                    <option value="">Argentina</option>
+                    <option value="">Brasil</option>
+                    <option value="">Chile</option>
+                    <option value="">Paraguay</option>
+                    <option value="">Uruguay</option>
+                </select>
+                <span id="error_pais"></span>
+                
+            </div>
+
+        </form>
+
+         <div class="boton_continuar">
+            <a href="/Html/domicilio.html"><button id="boton_continuar">Continuar</button></a>
+        </div>
+    </div>
+
+    <div class="columna_imagen">
+        <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+    </div>
+
+</body>
+
+<footer>
+
+    <div class="banda_celeste"></div>
+    <p>2025 GlobalArg. Todos los derechos reservados.</p>
+    
+</footer>
+        
+</html>

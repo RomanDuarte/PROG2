@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="/Imagenes/Logo.ico"/>
+    <link rel="stylesheet" href="/Css/stryle_datos_personales.css"/>
+    <script src="/JavaScript/index.js"></script>
+    <title>GlobalArg</title>
+</head>
+
+<header>
+    <div class="banda_celeste">
+    <img class="logo" src="/Imagenes/Logo.svg" alt="Logo" srcset="">
+    <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
+</header>
+ 
+<body id="pagina_web">
+    
+    <div class="contenedor_principal">
+
+        <form id="formulario" action="/Html/pais_residencia.html" method="get">
+            
+            <div class="columna_imagen_izquierda">
+            <img src="/Imagenes/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+            </div>
+
+            <a href="/Html/pagina_principal.html">
+                <img class="fecha_retroceder" src="/Imagenes/Flecha retroceder.svg" alt="Volver" />
+            </a>
+
+            <div class="encabezado_formulario"></div>
+                <h1 class="titulo">Datos Personales</h1>
+                <p class="subtitulo">- Contanos un poco más sobre vos</p>
+            </div>
+
+            <div class="formulario">
+
+                <label for="primer_nombre">Nombre/s</label>
+                <input type="text" id="primer_nombre" name="primer_nombre" required />
+                <span id="error_nombre"></span>
+
+                <label for="apellido">Apellido/s</label>
+                <input type="text" id="apellido" name="apellido" required />
+                <span id="error_apellido"></span>
+
+                <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
+                <span id="error_fecha"></span>
+
+                <label for="genero">Género</label>
+                    <select id="genero" name="genero" required>
+                        <option value=""> </option>
+                        <option id= "opcion1" value="femenino">Femenino</option>
+                        <option id= "opcion2" value="masculino">Masculino</option>
+                        <option id= "opcion3" value="no_binario">No binario</option>
+                    </select>
+                <span id="error_genero"></span>
+
+                <label for="estado_civil">Estado Civil</label>
+                    <select id="estado_civil" name="estado_civil" required>
+                        <option value=""> </option>
+                        <option id= "opcion1" value="casado">Casado</option>
+                        <option id= "opcion2" value="divorciado">Divorciado</option>
+                        <option id= "opcion3" value="soltero">Soltero</option>
+                        <option id= "opcion4"value="viudo">Viudo</option>
+                    </select>
+                <span id="error_estado_civil"></span>
+            </div>        
+        </form> 
+
+        <button type="submit" class="boton_continuar">Continuar</button>
+
+        <div class="columna_imagen_derecha">
+            <img src="/Imagenes/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+        </div>
+
+    </div>
+
+</body>
+
+<footer>
+    <div class="banda_celeste"></div>
+</footer>
+</html>

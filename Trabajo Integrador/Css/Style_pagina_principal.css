@@ -1,0 +1,99 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.banda_celeste {
+    height: 50px;
+    background-color: #3b98c3;
+}
+
+ 
+.contenedor_principal {
+    display: flex;
+    height: calc(100vh - 100px);
+    width: 100%;
+    padding: none;
+}
+
+.fondo_mundo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.fondo_mundo img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
+section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: none;
+}
+
+.logo_principal img {
+    height: 300px;
+    width: auto;
+}
+
+.GlobalArg {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 35px;
+    color: #ffffff;
+    -webkit-text-stroke: 2px #000;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    margin: 0 5px 0; /*arriba, derecha, abajo e izquierda*/
+}
+
+.GlobalArg #G,
+.GlobalArg #A {
+    color: #3b98c3;
+}
+
+.crear_cuenta a button {
+    background-color:  #3b98c3;
+    color: #fcfcfc;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    margin: none;
+}
+
+.tengo_cuenta a button {
+    text-decoration: none;
+    font-size: 15px;
+    color: #3b98c3;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    border: none;
+    background-color: #fcfcfc;
+    position: relative;
+    margin: none;
+}
+
+a, p {
+    text-decoration: none; 
+    color: #fcfcfc;
+    font-size: 16px;
+    margin: 0px 5px;
+    padding-top: 25px;
+}
