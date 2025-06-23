@@ -1,11 +1,12 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
     const nombreValido = validarNombre();
     const apellidoValido = validarApellido();
+    const fechaValida = validarFecha();
     const generoValido = validarGenero();
     const estadoValido = validarEstadoCivil();
     
 
-    if (!nombreValido || !apellidoValido || !generoValido || !estadoValido) {
+    if (!nombreValido || !apellidoValido || !fechaValida || !generoValido || !estadoValido) {
         e.preventDefault();
         alert("Por favor completá correctamente todos los campos.");
     }
@@ -14,7 +15,6 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
 function validarNombre() {
     const nombre = document.getElementById("primer_nombre").value.trim();
     const error = document.getElementById("error_nombre");
-
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/;
 
     if (nombre === "") {
@@ -39,6 +39,23 @@ function validarApellido() {
         return false;
     } else if (apellido.length < 2 || !regex.test(apellido)) {
         error.textContent = "Por favor, ingrese un apellido valido.";
+        return false;
+    } else {
+        error.textContent = "";
+        return true;
+    }
+}
+
+function validarFecha() {
+    const fecha = document.getElementById("fecha_nacimiento").value.trim();
+    const error = document.getElementById("error_fecha_nacimiento");
+    const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+
+    if (fecha === "") {
+        error.textContent = "Debe ingresar su fecha de nacimiento.";
+        return false;
+    } else if (!regex.test(fecha)) {
+        error.textContent = "Por favor, ingrese una fecha válida (dd/mm/aaaa).";
         return false;
     } else {
         error.textContent = "";
@@ -75,6 +92,9 @@ document.getElementById("primer_nombre").addEventListener('blur', validarNombre)
 
 document.getElementById("apellido").addEventListener('input', validarApellido);
 document.getElementById("apellido").addEventListener('blur', validarApellido);
+
+document.getElementById("fecha_nacimiento").addEventListener('input', validarFecha);
+document.getElementById("fecha_nacimiento").addEventListener('blur', validarFecha);
 
 document.getElementById("genero").addEventListener('input', validarGenero);
 document.getElementById("genero").addEventListener('blur', validarGenero);

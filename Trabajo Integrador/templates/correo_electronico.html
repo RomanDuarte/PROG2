@@ -10,14 +10,14 @@
 
 <header>
     <div class="banda_celeste">
-        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" >
+        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" srcset="">
         <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
 </header>
 
 <body id="pagina_web">
 
-    <div id="contenedor_principal">
+    <div class="contenedor_principal">
 
         <div class="columna_imagen_izquierda">
             <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
@@ -29,25 +29,24 @@
 
         <form id="formulario" action="/Trabajo Integrador/templates/domicilio.html" method="get">
 
-            <div class="encabezado_formulario">
-                <h1 class="titulo">Verifique su correo electronico</h1>
-                <p class="subtitulo">Te enviaremos un código de confirmación</p>
-            </div>
+            <h1 class="titulo">Verifique su correo electronico</h1>
+            <p class="subtitulo">Te enviaremos un código de confirmación</p>
 
             <div class="formulario">
 
                 <label for="email">Correo electrónico</label>
                 <input type="email" id="email" placeholder="Ingrese su correo" required />
+                <div class="errores">
+                    <span id="error_correo_electronico"></span>
+                </div>
                 
             </div>
 
+
+            <a href="/Trabajo Integrador/templates/condiciones_legales.html" class="boton_continuar">Continuar</a>
         </form>
 
-        <p class="terminos">Al continuar acepta los <a href="/Trabajo Integrador/templates/terminos_condiciones.html">Términos y Condiciones</a> y nuestra <a href="/Trabajo Integrador/templates/politica_privacidad.html">Política de privacidad</a></p>
-
-        <div class="boton_continuar">
-            <a href="/Trabajo Integrador/templates/condiciones_legales.html"><button id="boton_continuar">Continuar</button></a>
-        </div>
+        <p class="subtitulo">Al continuar acepta los <a href="/Trabajo Integrador/templates/terminos_condiciones.html" class="enlaces">Términos y Condiciones</a> y nuestra <a href="/Trabajo Integrador/templates/politica_privacidad.html" class="enlaces">Política de privacidad</a></p>
 
     </div>
 

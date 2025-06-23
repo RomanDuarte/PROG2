@@ -9,32 +9,27 @@
 </head>
 
 <header>
-  <div class="banda_celeste"></div>
-
-    <div class="nombre_encabezado">
-        <img src="/Trabajo Integrador/static/img/Logo.svg" class="logo">
-        <div class="nombre_encabezado">
-            <span id="G">G</span>lobal<span id="A">A</span>rg
-        </div>
-    </div> 
+    <div class="banda_celeste">
+        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" >
+        <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
 </header>
 
 <body id="pagina_web">
 
-  <div class="columna_imagen_izquierda">
-    <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
-  </div>
+  <div class="contenedor_principal">
+    <div class="columna_imagen_izquierda">
+      <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+    </div>
 
   <a href="/Trabajo Integrador/templates/correo_electronico.html">
       <img class="fecha_retroceder" src="/Trabajo Integrador/static/img/Flecha retroceder.svg" alt="Volver" />
   </a>
 
     <form id="formulario" action="/Trabajo Integrador/templates/correo_electronico.html" method="get">
-
-      <div class="encabezado_formulario">
-            <h1 class="titulo">Regulaciones</h1>
-            <p class="subtitulo">Elija las opciones que aplican a su caso</p>
-      </div>
+      
+      <h1 class="titulo">Regulaciones</h1>
+      <p class="subtitulo">Elija las opciones que aplican a su caso</p>
 
 
       <div class="formulario">
@@ -54,11 +49,13 @@
 
         <input type="checkbox" id="opcion_4">
         <label for="opcion_4">Ninguna de las anteriores</label>
-        <span id="error_condiciones"></span>
+        <div class="errores">
+          <span id="error_condiciones"></span>
+        </div>
 
       </div>
       
-      <a href="/Trabajo Integrador/templates/pais_residencia.html" class="boton_continuar">Continuar</a>
+      <a href="/Trabajo Integrador/templates/usuario_clave.html" class="boton_continuar">Continuar</a>
 
     </form>
 
@@ -69,6 +66,7 @@
   </div>
 
   <script src="/Trabajo Integrador/static/js/index_condiciones_legales.js"></script>
+  </div>
 </body>
 
 <footer>

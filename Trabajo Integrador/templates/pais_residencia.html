@@ -10,8 +10,9 @@
 
 <header>
     <div class="banda_celeste">
-    <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" srcset="">
-    <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
+        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" >
+        <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
 </header>
 
 <body id="pagina_web">
@@ -28,10 +29,8 @@
                 <img class="fecha_retroceder" src="/Trabajo Integrador/static/img/Flecha retroceder.svg" alt="Volver" />
             </a> 
 
-            <div class="encabezado_formulario">
                 <h1 class="titulo">País de residencia</h1>
                 <p class="subtitulo">- Necesitamos pedirte información</p>
-            </div>
 
             <div class="formulario">
                 <label for="pais">Pais de residencia</label>
@@ -44,7 +43,9 @@
                     <option value="">Paraguay</option>
                     <option value="">Uruguay</option>
                 </select>
-                <span id="error_pais"></span>
+                <div class="errores">
+                    <span id="error_pais"></span>
+                </div> 
                 
             </div>
 

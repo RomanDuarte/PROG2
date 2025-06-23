@@ -9,18 +9,19 @@
 </head>
 
 <header>
-    <div class="banda__celeste"></div>
-    <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" srcset=""><p id="name">
-    <span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    <div class="banda_celeste">
+        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" srcset="">
+        <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
 </header>
 
 <body id="pagina_web">
 
-    <div class="columna_imagen">
-        <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
-    </div>
-
     <div class="contenedor_principal">
+
+        <div class="columna_imagen_izquierda">
+            <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        </div>
 
         <form id="formulario" action="/Trabajo Integrador/templates/iniciar_sesion.html" method="get">
 
@@ -68,7 +69,7 @@
 
     </div>
 
-    <div class="columna_imagen">
+    <div class="columna_imagen_derecha">
         <img src="/Trabajo Integrador/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
     <script>
@@ -83,9 +84,6 @@
     </body>
 
 <footer>
-
     <div class="banda_celeste"></div>
-    <p>2025 GlobalArg. Todos los derechos reservados.</p>
-    
 </footer>
 </html>

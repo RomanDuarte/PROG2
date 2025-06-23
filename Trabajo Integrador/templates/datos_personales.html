@@ -10,15 +10,10 @@
 </head>
 
 <header>
-    <div class="banda_celeste"></div>
-
-    <div class="nombre_encabezado">
-        <img src="/Trabajo Integrador/static/img/Logo.svg" class="logo">
-        <div class="nombre_encabezado">
-            <span id="G">G</span>lobal<span id="A">A</span>rg
-        </div>
+    <div class="banda_celeste">
+        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" >
+        <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
-
 </header>
  
 <body id="pagina_web">
@@ -35,44 +30,52 @@
 
         <form id="formulario" action="/Trabajo Integrador/templates/pais_residencia.html" method="get">
             
-
-            <div class="encabezado_formulario">
                 <h1 class="titulo">Datos Personales</h1>
                 <p class="subtitulo">Contanos un poco más sobre vos</p>
-            </div>
 
             <div class="formulario">
 
                 <label for="primer_nombre">Nombre/s</label>
-                <input type="text" id="primer_nombre" name="primer_nombre" required />
-                <span id="error_nombre"></span>
+                <input type="text" id="primer_nombre" name="primer_nombre"/>
+                <div class="errores">
+                    <span id="error_nombre"></span>
+                </div>
 
                 <label for="apellido">Apellido/s</label>
-                <input type="text" id="apellido" name="apellido" required />
-                <span id="error_apellido"></span> 
+                <input type="text" id="apellido" name="apellido"/>
+                <div class="errores">
+                    <span id="error_apellido"></span> 
+                </div>
+                
 
                 <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
-                <span id="error_fecha"></span>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"/>
+                <div class="errores">
+                    <span id="error_fecha"></span>
+                <div class="errores"></div>
 
                 <label for="genero">Género</label>
-                    <select id="genero" name="genero" required>
+                    <select id="genero" name="genero">
                         <option value=""> </option>
                         <option id= "opcion1" value="femenino">Femenino</option>
                         <option id= "opcion2" value="masculino">Masculino</option>
                         <option id= "opcion3" value="no_binario">No binario</option>
                     </select>
-                <span id="error_genero"></span>
+                <div class="errores">
+                    <span id="error_genero"></span>
+                </div>
 
                 <label for="estado_civil">Estado Civil</label>
-                    <select id="estado_civil" name="estado_civil" required>
+                    <select id="estado_civil" name="estado_civil">
                         <option value=""> </option>
                         <option id= "opcion1" value="casado">Casado</option>
                         <option id= "opcion2" value="divorciado">Divorciado</option>
                         <option id= "opcion3" value="soltero">Soltero</option>
                         <option id= "opcion4"value="viudo">Viudo</option>
                     </select>
-                <span id="error_estado_civil"></span>
+                <div class="errores">
+                    <span id="error_estado_civil"></span>
+                </div>
             </div>  
             
             <a href="/Trabajo Integrador/templates/pais_residencia.html" class="boton_continuar">Continuar</a>
@@ -85,7 +88,7 @@
 
     </div>
 
-    <!-- <script src="/Trabajo Integrador/static/js/dato_personales.js"></script> -->
+    <script src="/Trabajo Integrador/static/js/dato_personales.js"></script>
 </body>
 
 <footer>

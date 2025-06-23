@@ -29,32 +29,45 @@
 
         <form id="formulario" action="/Trabajo Integrador/templates/pais_residencia.html" method="get">
 
-            <div class="encabezado_formulario">
                 <h1 class="titulo">Domicilio</h1>
                 <p class="subtitulo">Contanos donde vivís</p>
-            </div>
 
             <div class="formulario">
 
                 <label for="calle">Calle</label>
                 <input type="text" id="calle" name="calle" required />
-                <span id="error_calle"></span>
+                <div class="errores">
+                        <span id="error_calle"></span>
+                </div>
             
                 <label for="altura">Altura</label>
                 <input type="int" id="altura" name="altura" required />
-                <span id="error_altura"></span>
+                <div class="errores">
+                    <span id="error_altura"></span>
+                </div>
             
-                <label for="piso">Piso</label>
-                <input type="int" id="piso" name="psio" required />
-                <span id="error_piso"></span>
-            
-                <label for="depto">Depto</label>
-                <input type="text" id="depto" name="depto" required />
-                <span id="error_depto"></span>
+                <div class="fila_doble">
+                    <div class="campo">
+                        <label for="piso">Piso</label>
+                        <input type="number" id="piso" name="piso" required />
+                        <div class="errores">
+                            <span id="error_piso"></span>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="depto">Depto</label>
+                        <input type="text" id="depto" name="depto" required />
+                        <div class="errores">
+                            <span id="error_depto"></span>
+                        </div>
+                    </div>
+                </div>
             
                 <label for="ciudad">Ciudad</label>
                 <input type="text" id="ciudad" name="ciudad" required />
-                <span id="error_ciudad"></span>
+                 <div class="errores">
+                    <span id="error_ciudad"></span>
+                </div>
 
                 <label for="provincia">Provincia</label>
                 <select name="provincia" id="provincia" required>
@@ -83,12 +96,13 @@
                     <option value="">Tierra del Fuego</option>
                     <option value="">Tucumán</option>
                 </select>
-                <span id="error_provincia"></span>
+                <div class="errores">
+                    <span id="error_provincia"></span>
+                </div>
             </div>
 
             <a href="/Trabajo Integrador/templates/correo_electronico.html" class="boton_continuar">Continuar</a>
         </form>
-
 
     </div>
 
