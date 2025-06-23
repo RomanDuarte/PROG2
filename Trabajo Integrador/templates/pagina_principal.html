@@ -32,7 +32,7 @@
             </div>
 
             <div class="crear_cuenta"> 
-                <a href="/templates/datos_personales.html"><button id="crear_cuenta">CREAR CUENTA</button></a>
+                <a ><button id="crear_cuenta">CREAR CUENTA</button></a>
             </div>
                 
             <div class="tengo_cuenta"> 
@@ -43,6 +43,10 @@
         <script>
                     document.getElementById("tengo_cuenta").addEventListener("click", function() {
                             window.location.href = "/login";  
+                            });
+                    
+                    document.getElementById("crear_cuenta").addEventListener("click", function() {
+                            window.location.href = "/new_account";  
                             });
         </script>
 </body>

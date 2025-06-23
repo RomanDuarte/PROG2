@@ -1,33 +1,41 @@
 document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
     const usuarioValido = validarUsuario();
     const passwordValida = validarPassword();
 
     if (!usuarioValido || !passwordValida) {
-        e.preventDefault();
+        
         alert("Por favor completá correctamente todos los campos.");
-    }
-const user=document.getElementById("usuario").value;
-const contra=document.getElementById("password").value;
+    }   
+    const user = document.getElementById("usuario").value;
+    const contra = document.getElementById("password").value;
 
-fetch('/api/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ usuario: user, clave: contra })
-})
-.then(res => res.json())
-.then(data => {
-    if (data.status === 'ok') {
-        localStorage.setItem("nombre", data.nombre);
-        localStorage.setItem("apellidos", data.apellido);
-        localStorage.setItem("email", data.email);
-        localStorage.setItem("saldo", data.saldo);
-        window.location.href="/inicio";
-        alert('Login correcto');
-    } else {
-        alert('Login fallido');
-    }
+    fetch("/api/login", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario: user, clave: contra })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === 'ok') {
+            alert('Login correcto');
+            localStorage.setItem("nombre", data.nombre);
+            localStorage.setItem("apellidos", data.apellido);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("saldo", data.saldo);
+            window.location.href = "/inicio";
+        } else {
+            alert('Login fallido');
+            document.getElementById("formulario").reset();
+        }
+    })
+    .catch(err => {
+        console.error("Error en la solicitud:", err);
+    });
 });
-});
+
+
+
 
 function validarUsuario() {
     const usuario = document.getElementById("usuario").value.trim();
