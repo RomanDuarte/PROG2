@@ -63,7 +63,15 @@ body {
 .logo_principal{
     width: 60%;
     display: block;
-    margin: 80px auto 20px;
+    margin: 60px auto 0px;
+}
+
+.titulo{
+    font-size: 40px;
+    color: #3b98c3;
+    font-weight: bold;
+    display: block;
+    text-align: center;
 }
 
 .formulario label {

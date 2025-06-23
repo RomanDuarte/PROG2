@@ -29,26 +29,35 @@
     <form id="formulario" action="/Trabajo Integrador/templates/correo_electronico.html" method="get">
       
       <h1 class="titulo">Regulaciones</h1>
-      <p class="subtitulo">Elija las opciones que aplican a su caso</p>
+      <p class="subtitulo">- Elija las opciones que aplican a su caso</p>
 
 
       <div class="formulario">
       
         <label for="condiciones"></label>
-        <input type="checkbox" id="opcion_1">
-        <label for="opcion_1">Persona Políticamente Expuesta (Funcionario de Gobierno o relacionado con uno)</label>
-        
+
+        <div class="contenedor_checkbox">
+          <input class="checkbox" type="checkbox" id="opcion_1">
+          <label for="opcion_1">Persona Políticamente Expuesta</label>
+        </div>
+        <p class="subtitulo2">(Funcionario de Gobierno o relacionado con uno)</p>
       
-        <input type="checkbox" id="opcion_2">
-        <label for="opcion_2">Ciudadano Estadounidense o residente fiscal</label>
-        
+        <div class="contenedor_checkbox">
+          <input class="checkbox" type="checkbox" id="opcion_2">
+          <label for="opcion_2">Ciudadano Estadounidense o residente fiscal</label>
+        </div>
 
-        <input type="checkbox" id="opcion_3">
-        <label for="opcion_3">Sujeto Obligado (Personas o Entidades obligadas por ley a reportar transacciones sospechosas relacionadas con el lavado de dinero o el financiamiento del terrorismo)</label>
-        
+        <div class="contenedor_checkbox">
+          <input class="checkbox" type="checkbox" id="opcion_3">
+          <label for="opcion_3">Sujeto Obligado</label>
+        </div>
+        <p class="subtitulo2">(Personas o Entidades obligadas por ley a reportar transacciones sospechosas relacionadas con el lavado de dinero o el financiamiento del terrorismo)</p>
 
-        <input type="checkbox" id="opcion_4">
-        <label for="opcion_4">Ninguna de las anteriores</label>
+        <div class="contenedor_checkbox">
+          <input class="checkbox" type="checkbox" id="opcion_4">
+          <label for="opcion_4">Ninguna de las anteriores</label>
+        </div>
+
         <div class="errores">
           <span id="error_condiciones"></span>
         </div>
