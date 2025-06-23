@@ -33,6 +33,11 @@ def new_account():
 def login():
     return render_template('iniciar_sesion.html')
 
+@app.route('/pais_residencia')
+def pais():
+    return render_template('pais_residencia.html')
+
+
 @app.route('/inicio')
 def inicio():
     return render_template('billetera.html')
@@ -57,6 +62,31 @@ def api_login():
                         "saldo":usuario.saldo,
                         })
     return jsonify({'status': 'error'}), 401
+
+#api de registro
+@app.route('/api/registro', methods=['POST'])
+def api_registro():
+    data = request.json
+    usuario = data.get("usuario")
+    email = data.get("email")
+    nombre = data.get("nombre")
+    apellido = data.get("apellido")
+    password = data.get("password")
+
+    if Usuario.query.filter_by(user=usuario).first():
+        return jsonify({'status': 'error', 'mensaje': 'Usuario ya existe'}), 400
+
+    nuevo_usuario = Usuario(
+        user=usuario,
+        email=email,
+        nombre=nombre,
+        apellido=apellido,
+        password=password,
+        saldo=0
+    )
+    db.session.add(nuevo_usuario)
+    db.session.commit()
+    return jsonify({'status': 'ok'})
 
 # API para transferencia
 @app.route('/api/transfer', methods=['POST'])

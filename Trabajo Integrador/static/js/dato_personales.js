@@ -9,12 +9,30 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         e.preventDefault();
         alert("Por favor completá correctamente todos los campos.");
     }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
 
 function validarNombre() {
     const nombre = document.getElementById("primer_nombre").value.trim();
-    const error = document.getElementById("error-nombre");
+    const error = document.getElementById("error_nombre");
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/;
 
     if (nombre === "") {
@@ -109,8 +127,14 @@ document.getElementById("primer_nombre").addEventListener('blur', validarNombre)
 document.getElementById("apellido").addEventListener('input', validarApellido);
 document.getElementById("apellido").addEventListener('blur', validarApellido);
 
-document.getElementById("email").addEventListener('input', validarEmail);
-document.getElementById("email").addEventListener('blur', validarEmail);
+// document.getElementById("email").addEventListener('input', validarEmail);
+// document.getElementById("email").addEventListener('blur', validarEmail);
 
 document.getElementById("password").addEventListener('input', validarContra);
 document.getElementById("password").addEventListener('blur', validarContra);
+
+
+document.getElementById("boton_continuar").addEventListener("click", function() {
+window.location.href = "/pais_residencia";  
+}); 
+

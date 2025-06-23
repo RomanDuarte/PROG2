@@ -48,7 +48,7 @@ function validarApellido() {
 
 function validarFecha() {
     const fecha = document.getElementById("fecha_nacimiento").value.trim();
-    const error = document.getElementById("error_fecha_nacimiento");
+    const error = document.getElementById("error_fecha");
     const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
 
     if (fecha === "") {
@@ -82,10 +82,15 @@ function validarEstadoCivil() {
         error.textContent = "Por favor, elija una opcion.";
         return false;
     } else {
-       error.textContent = "";
+        error.textContent = "";
         return true;
     }
 }
+
+
+document.getElementById("continuar").addEventListener("click", function() {
+    window.location.href = '/pais_residencia';  
+}); 
 
 document.getElementById("primer_nombre").addEventListener('input', validarNombre);
 document.getElementById("primer_nombre").addEventListener('blur', validarNombre);
@@ -101,3 +106,4 @@ document.getElementById("genero").addEventListener('blur', validarGenero);
 
 document.getElementById("estado_civil").addEventListener('input', validarEstadoCivil);
 document.getElementById("estado_civil").addEventListener('blur', validarEstadoCivil);
+

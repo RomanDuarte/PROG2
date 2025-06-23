@@ -25,3 +25,7 @@ function validarPais() {
 
 document.getElementById("pais").addEventListener('input', validarPais);
 document.getElementById("pais").addEventListener('blur', validarPais);
+
+document.getElementById("boton_continuar").addEventListener("click", function() {
+    window.location.href = '/domicilio';  
+}); 
