@@ -60,53 +60,116 @@ body {
 
 }
 
-.fecha_retroceder {
-    width: 40px;
-    margin-left: 5px;
+.avatar {
+    color: #fcfcfc;
+    background-color: #3b98c3;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; 
+    cursor: pointer;
+    border-radius: 50%;  
+    border: 0.02px solid #000000;
+    width: 80px;
+    height: 80px; 
 }
 
-.titulo{
+.nombre {
+    font-size: 16px;
+    color: #3b98c3;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.titulo_contenedor {
+    display: flex;         
+    align-items: center;
+    gap: 20px;
+}
+
+.titulo {
     font-size: 40px;
     color: #3b98c3;
     font-weight: bold;
-    margin-top: 45px;
-    margin-left: 5px;
-    margin-bottom: 0px;
+    margin: 0;
 }
 
-.subtitulo{
-    font-size: 15px;
+.subtitulo {
+    font-size: 25px;
     color: #eca94e;
-    margin-top: -5px;
-    margin-left: 10px;
+    margin: 0;
 }
 
-input, select{
-    display: block;
-    width: 95%;
-    padding: 8px;
-    background-color: #c7c6c6;
-    border:0.02px solid #000000;
-    border-radius: 5px;
-    font-size: 16px;
-    margin: 0 auto 5px auto;
-    box-sizing: border-box;
+.boton_contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.boton_continuar{
+.botones_redondos {
+  color: #fcfcfc;
+  background-color: #3b98c3;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 40px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0.02px solid #000000;
+}
+
+.boton_contenedor2 {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.botones_cuadrados{
+    width: 100px;
+    height: auto;
     color: #fcfcfc;
-    width: 20%;
     background-color: #3b98c3;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    display: block;
+    display: inline-block;
     text-decoration: none;
-    margin: 80px auto 20px;
-    border:0.02px solid #000000;
-    border-radius: 5px;
-    padding: 8px 40px;
+    padding: 8px 8px;
     cursor: pointer;
+    margin-top: 30px;
+    border: 0.02px solid #000000;
+}
+
+.logo_principal{
+    width: 60%;
+    display: block;
+    margin: 14px auto 0px;
+}
+
+.menu_inferior{
+   display: flex;
+    justify-content: center;
+}
+
+.botones_menu{
+    width: 100px;
+    height: auto;
+    color: #fcfcfc;
+    background-color: #3b98c3;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px 20px;
+    cursor: pointer;
+    margin-top: 0px;
+    border: 0.02px solid #fcfcfc;
 }
 
 .footer {
