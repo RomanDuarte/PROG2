@@ -49,6 +49,20 @@ section {
 .logo_principal img {
     height: 300px;
     width: auto;
+    transition: transform 0.2s linear;
+}
+
+.logo_principal:hover {
+  animation: girar 2s linear infinite;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .GlobalArg {
@@ -77,6 +91,7 @@ section {
     cursor: pointer;
     position: relative;
     margin-bottom: -100px;
+    border: 0.02px solid #000000;
 }
 
 .tengo_cuenta a button {
@@ -90,6 +105,10 @@ section {
     background-color: #fcfcfc;
     position: relative;
     margin-top: -100px;
+}
+
+.fondo_mundo:hover, .tengo_cuenta:hover, .crear_cuenta:hover {
+    transform: scale(1.2);
 }
 
 a, p {

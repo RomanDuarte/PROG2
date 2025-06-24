@@ -48,6 +48,7 @@ body {
     width: 70%;
     height: auto;
     top: 5%;
+    transition: transform 5s ease;
 }
 
 
@@ -58,6 +59,14 @@ body {
 .columna_imagen_derecha {
     left: 65%;
 
+}
+
+.columna_imagen_izquierda:hover {
+    transform: translateX(-100%);
+}
+
+.columna_imagen_derecha:hover {
+    transform: translateX(100%);
 }
 
 .avatar {

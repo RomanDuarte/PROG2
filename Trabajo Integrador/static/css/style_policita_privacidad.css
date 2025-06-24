@@ -44,11 +44,12 @@ body {
 }
 
 .columna_imagen_izquierda, .columna_imagen_derecha {
-    position: fixed;
-    top: 5%;
+    position: absolute;
+    top: 50%;
     width: 70%;
     height: auto;
-    pointer-events: none;
+    top: 5%;
+    transition: transform 5s ease;
 }
 
 
@@ -61,9 +62,21 @@ body {
 
 }
 
+.columna_imagen_izquierda:hover {
+    transform: translateX(-100%);
+}
+
+.columna_imagen_derecha:hover {
+    transform: translateX(100%);
+}
+
 .fecha_retroceder {
     width: 40px;
     margin-left: 5px;
+}
+
+.fecha_retroceder:hover {
+    transform: scale(1.2);
 }
 
 .titulo{

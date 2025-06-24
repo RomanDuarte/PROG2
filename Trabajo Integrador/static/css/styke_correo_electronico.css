@@ -48,6 +48,7 @@ body {
     width: 70%;
     height: auto;
     top: 5%;
+    transition: transform 5s ease;
 }
 
 
@@ -60,9 +61,21 @@ body {
 
 }
 
+.columna_imagen_izquierda:hover {
+    transform: translateX(-100%);
+}
+
+.columna_imagen_derecha:hover {
+    transform: translateX(100%);
+}
+
 .fecha_retroceder {
     width: 40px;
     margin-left: 5px;
+}
+
+.fecha_retroceder:hover {
+    transform: scale(1.2);
 }
 
 .titulo{
@@ -102,6 +115,11 @@ input{
     box-sizing: border-box;
 }
 
+input:hover{
+    transform: scaleY(1.1);
+    transition: transform 0.3s ease;
+}
+
 .errores{
     color: #eca94e;
     font-size: 12px;
@@ -125,6 +143,11 @@ input{
     cursor: pointer;
 }
 
+.boton_continuar:hover {
+    background-color: #fcfcfc;
+    color: #3b98c3;          
+    border-color: #3b98c3;
+}
 
 .subtitulo2{
     font-size: 15px;
