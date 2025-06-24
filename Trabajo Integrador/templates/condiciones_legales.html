@@ -26,7 +26,7 @@
       <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
   </a>
 
-    <form id="formulario" action="/templates/correo_electronico.html" method="get">
+    <form id="formulario" method="get">
       
       <h1 class="titulo">Regulaciones</h1>
       <p class="subtitulo">- Elija las opciones que aplican a su caso</p>
@@ -74,8 +74,15 @@
     <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
   </div>
 
-  <script src="/static/js/index_condiciones_legales.js"></script>
   </div>
+
+ <script src="/static/js/index_condiciones_legales.js"></script>
+
+  <script>
+    document.getElementById("continuar").addEventListener("click", function() {
+      window.location.href = "crear_usuario_clave";  
+   });
+  </script>
 </body>
 
 <footer>

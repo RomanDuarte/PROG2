@@ -27,7 +27,7 @@
             <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver"/>
         </a>
 
-        <form id="formulario" action="/templates/pais_residencia.html" method="get">
+        <form id="formulario" method="get">
 
                 <h1 class="titulo">Domicilio</h1>
                 <p class="subtitulo">- Contanos donde vivís</p>
@@ -35,13 +35,13 @@
             <div class="formulario">
 
                 <label for="calle">Calle</label>
-                <input type="text" id="calle" name="calle" required />
+                <input type="text" id="calle" name="calle"/>
                 <div class="errores">
                         <span id="error_calle"></span>
                 </div>
             
                 <label for="altura">Altura</label>
-                <input type="int" id="altura" name="altura" required />
+                <input type="int" id="altura" name="altura"/>
                 <div class="errores">
                     <span id="error_altura"></span>
                 </div>
@@ -49,14 +49,14 @@
                 <div class="fila_doble">
                     <div class="campo">
                         <label for="piso">Piso</label>
-                        <input type="number" id="piso" name="piso" required />
+                        <input type="number" id="piso" name="piso"/>
                         <div class="errores">
                             <span id="error_piso"></span>
                         </div>
                     </div>
                     <div class="campo">
                         <label for="depto">Depto</label>
-                        <input type="text" id="depto" name="depto" required />
+                        <input type="text" id="depto" name="depto"/>
                         <div class="errores">
                             <span id="error_depto"></span>
                         </div>
@@ -64,13 +64,13 @@
                 </div>
             
                 <label for="ciudad">Ciudad</label>
-                <input type="text" id="ciudad" name="ciudad" required />
+                <input type="text" id="ciudad" name="ciudad"/>
                  <div class="errores">
                     <span id="error_ciudad"></span>
                 </div>
 
                 <label for="provincia">Provincia</label>
-                <select name="provincia" id="provincia" required>
+                <select name="provincia" id="provincia">
                     <option value="">  </option>
                     <option value="">Buenos Aires</option>
                     <option value="">Catamarca</option>
@@ -111,6 +111,12 @@
     </div>
 
     <script src="/static/js/index_domicilio.js"></script>
+
+    <script>
+        document.getElementById("continuar").addEventListener("click", function() {
+            window.location.href = "/email";  
+        });
+    </script>
     
 </body>
 

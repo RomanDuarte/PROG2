@@ -26,7 +26,7 @@
             <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
-        <form id="formulario" action="/templates/condiciones_legales.html" method="get">
+        <form id="formulario" method="get">
 
             <h1 class="titulo">Crear Usuario</h1>
             <p class="subtitulo">- Elegí tu Usuario y Clave para luego poder acceder a tu cuenta</p>
@@ -57,7 +57,13 @@
         <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
 
-    <script src="/static/js/index_usuario_clave.js"></script>
+     <script src="/static/js/index_usuario_clave.js"></script>
+
+    <script>
+        document.getElementById("tengo_cuenta").addEventListener("click", function() {
+            window.location.href = "/login";  
+        });
+    </script>
 </body>
 
 <footer>

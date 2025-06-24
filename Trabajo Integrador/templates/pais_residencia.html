@@ -19,7 +19,7 @@
 
     <div class="contenedor_principal">
 
-        <form id="formulario" action="/templates/domicilio.html" method="get">
+        <form id="formulario" method="get">
 
             <div class="columna_imagen_izquierda">
                 <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
@@ -51,6 +51,7 @@
 
             <button type="submit" id="continuar" class="boton_continuar">Continuar</button>
         
+
         </form>
         
     </div>
@@ -60,6 +61,12 @@
     </div>
 
      <script src="/static/js/index_pais_residencia.js"></script>
+
+      <script>
+        document.getElementById("continuar").addEventListener("click", function() {
+            window.location.href = "/datos_domicilio";  
+        });
+    </script>
      
 </body>
 

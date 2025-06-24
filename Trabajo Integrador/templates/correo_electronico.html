@@ -46,7 +46,7 @@
             <button type="submit" id="continuar" class="boton_continuar">Continuar</button>
         </form>
 
-        <p class="subtitulo2">Al continuar acepta los <a href="/templates/terminos_condiciones.html" class="enlaces">Términos y Condiciones</a> y nuestra <a href="/templates/politica_privacidad.html" class="enlaces">Política de privacidad</a></p>
+        <p class="subtitulo2">Al continuar acepta los <a id="terminos" class="enlaces">Términos y Condiciones</a> y nuestra <a id="politica" class="enlaces">Política de privacidad</a></p>
 
     </div>
 
@@ -55,6 +55,21 @@
     </div>
 
     <script src="/static/js/index_correo_electronico.js"></script>
+
+    <script>
+        document.getElementById("continuar").addEventListener("click", function() {
+            window.location.href = "/condiciones";  
+        });
+
+        document.getElementById("terminos").addEventListener("click", function() {
+            window.location.href = "/terminos";  
+        });
+
+        document.getElementById("politica").addEventListener("click", function() {
+            window.location.href = "/politica";  
+        });
+
+    </script>
 </body>
 
 <footer>

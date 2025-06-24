@@ -48,7 +48,7 @@ def datos_domicilio():
 def email():
     return render_template('correo_electronico.html')
 
-@app.route('/condiciones')
+@app.route('/condiciones') 
 def condiciones():
     return render_template('condiciones_legales.html')
 
@@ -62,7 +62,7 @@ def inicio():
 
 @app.route('/transfer')
 def transfer():
-    return render_template('transfer.html')
+    return render_template('transferencia.html')
 
 @app.route('/ajustes_varios')
 def ajustes_varios():
@@ -75,6 +75,15 @@ def modificar_datos():
 @app.route('/delete_cuenta')
 def delete_cuenta():
     return render_template('eliminar_cuenta.html')
+
+@app.route('/terminos')
+def terminos():
+    return render_template('terminos_condiciones.html')
+
+@app.route('/politica')
+def politica():
+    return render_template('politica_privacidad.html')
+
 
 # API login
 @app.route('/api/login', methods=['POST'])
