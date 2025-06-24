@@ -37,11 +37,11 @@
 
                 <select name="pais" id="pais">
                     <option value="">  </option>
-                    <option value="">Argentina</option>
-                    <option value="">Brasil</option>
-                    <option value="">Chile</option>
-                    <option value="">Paraguay</option>
-                    <option value="">Uruguay</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Uruguay">Uruguay</option>
                 </select>
                 <div class="errores">
                     <span id="error_pais"></span>
@@ -64,6 +64,7 @@
 
       <script>
         document.getElementById("continuar").addEventListener("click", function() {
+            e.prevent.Default();
             window.location.href = "/datos_domicilio";  
         });
     </script>
