@@ -1,16 +1,16 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
-  
     const calleValida = validarCalle();
     const alturaValida = validarAltura();
     const ciudadValida = validarCiudad();
     const provinciaValida = validarProvincia();
 
-    if (!calleValida || !alturaValida || !validarCiudad || !validarProvincia) {
+    if (!calleValida || !alturaValida || !ciudadValida || !provinciaValida) {
         e.preventDefault();
-        alert("Por favor completá correctamente todos los campos.");
+    }else {
+        e.preventDefault();
+        window.location.href = '/email';
     }
 });
-
 
 function validarCalle() {
     const calle = document.getElementById("calle").value.trim();
@@ -21,7 +21,7 @@ function validarCalle() {
         error.textContent = "Debe ingresar una calle.";
         return false;
     } else if (calle.length < 2 || !regex.test(calle)) {
-        error.textContent = "Por favor, ingrese una calle valida.";
+        error.textContent = "Por favor, ingrese una calle válida.";
         return false;
     } else {
         error.textContent = "";
@@ -37,8 +37,8 @@ function validarAltura() {
     if (altura === "") {
         error.textContent = "Debe ingresar una altura.";
         return false;
-    } else if (altura.length < 2 || !regex.test(altura)) {
-        error.textContent = "Por favor, ingrese hasta cinco numeros.";
+    } else if (!regex.test(altura)) {
+        error.textContent = "Por favor, ingrese hasta cinco números.";
         return false;
     } else {
         error.textContent = "";
@@ -47,16 +47,15 @@ function validarAltura() {
 }
 
 function validarCiudad() {
-    const ciudad = document.getElementById("cuidad").value.trim();
-    const error = document.getElementById("error_cuidad");
-
+    const ciudad = document.getElementById("ciudad").value.trim();
+    const error = document.getElementById("error_ciudad");
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/;
 
     if (ciudad === "") {
         error.textContent = "Debe ingresar una ciudad.";
         return false;
     } else if (ciudad.length < 2 || !regex.test(ciudad)) {
-        error.textContent = "Por favor, ingrese una ciudad valida.";
+        error.textContent = "Por favor, ingrese una ciudad válida.";
         return false;
     } else {
         error.textContent = "";
@@ -68,14 +67,13 @@ function validarProvincia() {
     const provincia = document.getElementById("provincia");
     const error = document.getElementById("error_provincia");
     if (provincia.value === "") {
-        error.textContent = "Por favor, elija una opcion.";
+        error.textContent = "Por favor, elija una opción.";
         return false;
     } else {
         error.textContent = "";
         return true;
     }
 }
-
 
 document.getElementById("calle").addEventListener('input', validarCalle);
 document.getElementById("calle").addEventListener('blur', validarCalle);
@@ -88,3 +86,14 @@ document.getElementById("ciudad").addEventListener('blur', validarCiudad);
 
 document.getElementById("provincia").addEventListener('input', validarProvincia);
 document.getElementById("provincia").addEventListener('blur', validarProvincia);
+
+document.getElementById("continuar").addEventListener("click", function () {
+    const calleValida = validarCalle();
+    const alturaValida = validarAltura();
+    const ciudadValida = validarCiudad();
+    const provinciaValida = validarProvincia();
+
+    if (calleValida && alturaValida && ciudadValida && provinciaValida) {
+        document.getElementById("formulario").dispatchEvent(new Event('submit'));
+    }
+});

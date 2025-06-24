@@ -34,9 +34,6 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
     });
 });
 
-
-
-
 function validarUsuario() {
     const usuario = document.getElementById("usuario").value.trim();
     const error = document.getElementById("error_usuario");
@@ -77,5 +74,9 @@ document.getElementById("usuario").addEventListener('blur', validarUsuario);
 
 document.getElementById("password").addEventListener('input', validarPassword);
 document.getElementById("password").addEventListener('blur', validarPassword);
+
+document.getElementById("continuar").addEventListener("click", function() {
+    window.location.href = '/pais_residencia';  
+});
 
 

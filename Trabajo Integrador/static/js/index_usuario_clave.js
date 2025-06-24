@@ -2,9 +2,11 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const usuarioValido = validarUsuario();
     const passwordValida = validarPassword();
 
-    if (!validarUsuario || !passwordValida) {
+    if (!usuarioValido || !passwordValida) {
         e.preventDefault();
-        alert("Por favor completá correctamente todos los campos.");
+    }else {
+        e.preventDefault();
+        window.location.href = '/crear_usuario_clave';
     }
 });
 
@@ -18,14 +20,13 @@ function validarUsuario() {
         error.textContent = "Debe ingresar su nombre.";
         return false;
     } else if (usuario.length < 2 || !regex.test(usuario)) {
-        error.textContent = "Por favor, ingrese un nombre valido.";
+        error.textContent = "Por favor, ingrese un nombre válido.";
         return false;
     } else {
         error.textContent = "";
         return true;
     }
 }
-
 
 function validarPassword() {
     const contra = document.getElementById("password").value.trim();
@@ -48,3 +49,13 @@ document.getElementById("usuario").addEventListener('blur', validarUsuario);
 
 document.getElementById("password").addEventListener('input', validarPassword);
 document.getElementById("password").addEventListener('blur', validarPassword);
+
+document.getElementById("continuar").addEventListener("click", function() {
+    const usuarioValido = validarUsuario();
+    const passwordValida = validarPassword();
+
+    if (usuarioValido && passwordValida) {
+        document.getElementById("formulario").dispatchEvent(new Event('submit', { cancelable: true }));
+    } else {
+    }
+});

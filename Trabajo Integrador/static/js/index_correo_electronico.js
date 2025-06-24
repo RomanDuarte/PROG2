@@ -1,9 +1,11 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
     const emailValido = validarEmail();
 
-    if (!emailValido ) {
+    if (!emailValido) {
         e.preventDefault();
-        alert("Por favor completá correctamente todos los campos.");
+    }else {
+        e.preventDefault();
+        window.location.href = '/condiciones';
     }
 });
 
@@ -26,3 +28,11 @@ function validarEmail() {
 
 document.getElementById("email").addEventListener('input', validarEmail);
 document.getElementById("email").addEventListener('blur', validarEmail);
+
+document.getElementById("continuar").addEventListener("click", function () {
+    const emailValido = validarEmail();
+
+    if (emailValido) {
+        document.getElementById("formulario").dispatchEvent(new Event('submit'));
+    }
+});

@@ -11,8 +11,11 @@ class Usuario(db.Model):
     apellido = db.Column(db.String(50), nullable=False)
     saldo = db.Column(db.Float, default=0.0)
 
+    transferencias_enviadas = db.relationship('Transferencia', foreign_keys='Transferencia.emisor_id', backref='emisor', lazy=True)
+    transferencias_recibidas = db.relationship('Transferencia', foreign_keys='Transferencia.receptor_id', backref='receptor', lazy=True)
+
 class Transferencia(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    emisor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
-    receptor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    emisor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
+    receptor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
     monto = db.Column(db.Float, nullable=False)
