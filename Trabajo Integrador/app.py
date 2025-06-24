@@ -129,6 +129,46 @@ def api_registro():
     db.session.commit()
     return jsonify({'status': 'ok'})
 
+# API cambiar datos personales
+
+@app.route('/api/usuarios/<int:id>', methods=['PUT'])
+def modificar_datos(id):
+    datos = request.get_json()
+    usuario = Usuario.query.get(id)
+
+    if not usuario:
+        return jsonify({'error': 'Usuario no encontrado'}), 404
+
+    usuario.primer_nombre = datos.get('primer_nombre', usuario.primer_nombre)
+    usuario.apellido = datos.get('apellido', usuario.apellido)
+    usuario.fecha_nacimiento = datos.get('fecha_nacimiento', usuario.fecha_nacimiento)
+    usuario.genero = datos.get('genero', usuario.genero)
+    usuario.estado_civil = datos.get('estado_civil', usuario.estado_civil)
+    usuario.email = datos.get('email', usuario.email)
+    usuario.usuario = datos.get('usuario', usuario.usuario)
+    usuario.clave = datos.get('clave', usuario.clave)
+
+    db.session.commit()
+    return jsonify({'mensaje': 'Usuario actualizado correctamente'})
+
+
+# API eliminar cuenta
+@app.route('/api/usuarios/<int:id>/eliminar', methods=['POST'])
+def delete_cuenta(id):
+    datos = request.get_json()
+    usuario = Usuario.query.get(id)
+
+    if not usuario:
+        return jsonify({'error': 'Usuario no encontrado'}), 404
+
+    if usuario.usuario != datos.get('usuario') or usuario.clave != datos.get('clave'):
+        return jsonify({'error': 'Usuario o clave incorrectos'}), 401
+
+    db.session.delete(usuario)
+    db.session.commit()
+    return jsonify({'mensaje': 'Cuenta eliminada correctamente'})
+
+
 # API transferencia
 @app.route('/api/transfer', methods=['POST'])
 def api_transfer():
