@@ -132,10 +132,22 @@ body {
   border: 0.02px solid #000000;
 }
 
+.botones_redondos:hover {
+    background-color: #fcfcfc;
+    color: #eca94e;          
+    border-color: #eca94e;
+}
+
 .boton_contenedor2 {
   display: flex;
   justify-content: center;
   gap: 25px;
+}
+
+.boton_contenedor2:hover {
+    background-color: #fcfcfc;
+    color: #3b98c3;          
+    border-color: #3b98c3;
 }
 
 .botones_cuadrados{
@@ -152,6 +164,12 @@ body {
     cursor: pointer;
     margin-top: 30px;
     border: 0.02px solid #000000;
+}
+
+.botones_cuadrados:hover {
+    background-color: #fcfcfc;
+    color: #3b98c3;          
+    border-color: #3b98c3;
 }
 
 .audio_contenedor {
@@ -191,6 +209,12 @@ body {
     margin-top: 0px;
     border: 0.02px solid #fcfcfc;
 }
+
+.botones_menu:hover{
+    transition: transform 0.2s ease;
+    transform: scale(0.8);
+}
+
 
 .footer {
   position: fixed;
