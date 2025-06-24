@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/Logo.ico">
+    <link rel="stylesheet" href="/static/css/style_cambio_datos_personales.css">
+    <title>GlobalArg</title>
+</head>
+
+<header>
+    <div class="banda_celeste">
+        <img class="logo" src="/static/img/Logo.svg" alt="Logo" >
+        <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
+    </div>
+</header>
+
+<body id="pagina_web">
+
+    <div class="columna_imagen_izquierda">
+        <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+    </div>
+
+    <div class="contenedor_principal">
+
+        <a href="/templates/ajustes.html">
+            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
+        </a>
+
+        <form id="formulario" method="get">
+            <div class="formulario">
+
+                <h1 class="titulo">Sus datos personales</h1>
+                <p class="subtitulo">- Ingrese los datos que quiera modificar -</p>
+
+                <div class="grupo_campo">
+                    <label for="primer_nombre">Nombre/s:</label>
+                    <input type="text" id="primer_nombre" name="primer_nombre"/>
+                </div>
+                <div class="errores"><span id="error_nombre"></span></div>
+
+                <div class="grupo_campo">
+                    <label for="apellido">Apellido/s:</label>
+                    <input type="text" id="apellido" name="apellido"/>
+                </div>
+                <div class="errores"><span id="error_apellido"></span></div>
+
+                <div class="grupo_campo">
+                    <label for="fecha_nacimiento">Fecha de Nac.:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"/>
+                </div>
+                <div class="errores"><span id="error_fecha"></span></div>
+
+                <div class="grupo_campo">
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero">
+                        <option value=""> </option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="no_binario">No binario</option>
+                    </select>
+                </div>
+                <div class="errores"><span id="error_genero"></span></div>
+
+                <div class="grupo_campo">
+                    <label for="estado_civil">Estado Civil:</label>
+                    <select id="estado_civil" name="estado_civil">
+                        <option value=""> </option>
+                        <option value="casado">Casado</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="soltero">Soltero</option>
+                        <option value="viudo">Viudo</option>
+                    </select>
+                </div>
+                <div class="errores"><span id="error_estado_civil"></span></div>
+
+                <div class="grupo_campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" placeholder="Ingrese su correo" />
+                </div>
+                <div class="errores">
+                    <span id="error_correo_electronico"></span>
+                </div>
+
+                <div class="grupo_campo">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required />
+                </div>
+                <div class="errores">
+                    <span id="error_usuario"></span>
+                </div>
+
+                <div class="grupo_campo">
+                    <label for="password">Clave:</label>
+                    <input type="int" id="password" name="clave" required />
+                </div>
+                <div class="errores">
+                    <span id="error_password"></span>
+                </div>
+                
+                <button type="submit" id="continuar" class="boton_continuar">Guardar cambios</button>
+
+            </div>
+        </form>
+
+    </div>
+
+    <div class="columna_imagen_derecha">
+        <img src="/static/img/Mapa Mundo derecha.svg" alt="fondo_mundo" />
+    </div>
+
+</body>
+
+<footer>
+    <div class="banda_celeste"></div>
+</footer>
+
+</html>

@@ -4,58 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/static/img/Logo.ico">
-    <link rel="stylesheet" href="/static/css/style_iniciar_sesion.css">
+    <link rel="stylesheet" href="/Trabajo Integrador/static/css/style_eliminar_cuenta.css">
     <title>GlobalArg</title>
 </head>
 
 <header>
     <div class="banda_celeste">
-        <img class="logo" src="/static/img/Logo.svg" alt="Logo" >
+        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" >
         <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
 </header>
-
+ 
 <body id="pagina_web">
 
     <div class="columna_imagen_izquierda">
-        <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
     </div>
 
     <div class="contenedor_principal">
 
+        <a href="/Trabajo Integrador/templates/ajustes.html">
+            <img class="fecha_retroceder" src="/Trabajo Integrador/static/img/Flecha retroceder.svg" alt="Volver" />
+        </a>
+
         <div class="logo_principal">
-            <img id="logo.png" src="/static/img/Logo.svg" alt="Logo" height="350px"></a>
+            <img id="logo.png" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" height="350px"></a>
         </div>
 
         <form id="formulario" method="get">
             <div class="formulario"">
 
-                <h1 class="titulo">Inicar Sesion</h1>
+                <h1 class="titulo">Eliminar Cuenta</h1>
+                <p class="subtitulo">- Ingrese su usuario y clave -</p>
 
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required />
+                <input type="text" id="usuario" name="usuario"/>
                 <div class="errores">
                     <span id="error_usuario"></span>
                 </div>
 
                 <label for="password">Clave:</label>
-                <input type="int" id="password" name="clave" required />
+                <input type="int" id="password" name="clave"/>
                 <div class="errores">
                     <span id="error_password"></span>
                 </div>
                 </div>
             
-            <button type="submit" id="continuar" class="boton_continuar">Continuar</button>
+            <button type="submit" class="boton_continuar">Eliminar</button>
         </form>
 
 
     </div>
 
     <div class="columna_imagen_derecha">
-        <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+        <img src="/Trabajo Integrador/static/img/Mapa Mundo derecha.svg" alt="fondo_mundo" />
     </div>
     
-    <script src="/static/js/index_inicio_sesion.js"></script>
 </body>
 
 <footer>

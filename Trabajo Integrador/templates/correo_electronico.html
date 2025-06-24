@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/Trabajo Integrador/static/img/Logo.ico" />
-    <link rel="stylesheet" href="/Trabajo Integrador/static/css/styke_correo_electronico.css">
+    <link rel="icon" href="/static/img/Logo.ico" />
+    <link rel="stylesheet" href="/static/css/styke_correo_electronico.css">
     <title>GlobalArg</title>
 </head>
 
 <header>
     <div class="banda_celeste">
-        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" srcset="">
+        <img class="logo" src="/static/img/Logo.svg" alt="Logo" srcset="">
         <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
 </header>
@@ -20,14 +20,14 @@
     <div class="contenedor_principal">
 
         <div class="columna_imagen_izquierda">
-            <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+            <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
         </div>
 
-        <a href="/Trabajo Integrador/templates/domicilio.html">
-            <img class="fecha_retroceder" src="/Trabajo Integrador/static/img/Flecha retroceder.svg" alt="Volver" />
+        <a href="/templates/domicilio.html">
+            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
-        <form id="formulario" action="/Trabajo Integrador/templates/domicilio.html" method="get">
+        <form id="formulario" action="/templates/domicilio.html" method="get">
 
             <h1 class="titulo">Verifique su correo electronico</h1>
             <p class="subtitulo">- Te enviaremos un código de confirmación</p>
@@ -35,7 +35,7 @@
             <div class="formulario">
 
                 <label for="email">Correo electrónico</label>
-                <input type="email" id="email" placeholder="Ingrese su correo" required />
+                <input type="email" id="email" placeholder="Ingrese su correo"/>
                 <div class="errores">
                     <span id="error_correo_electronico"></span>
                 </div>
@@ -43,18 +43,18 @@
             </div>
 
 
-            <a href="/Trabajo Integrador/templates/condiciones_legales.html" class="boton_continuar">Continuar</a>
+            <button type="submit" id="continuar" class="boton_continuar">Continuar</button>
         </form>
 
-        <p class="subtitulo2">Al continuar acepta los <a href="/Trabajo Integrador/templates/terminos_condiciones.html" class="enlaces">Términos y Condiciones</a> y nuestra <a href="/Trabajo Integrador/templates/politica_privacidad.html" class="enlaces">Política de privacidad</a></p>
+        <p class="subtitulo2">Al continuar acepta los <a href="/templates/terminos_condiciones.html" class="enlaces">Términos y Condiciones</a> y nuestra <a href="/templates/politica_privacidad.html" class="enlaces">Política de privacidad</a></p>
 
     </div>
 
     <div class="columna_imagen_derecha">
-        <img src="/Trabajo Integrador/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+        <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
 
-    <script src="/Trabajo Integrador/static/js/index_correo_electronico.js"></script>
+    <script src="/static/js/index_correo_electronico.js"></script>
 </body>
 
 <footer>

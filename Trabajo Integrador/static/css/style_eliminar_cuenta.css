@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfcfc;
+}
+
+.banda_celeste {
+    background-color: #3b98c3;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+} 
+
+.logo {
+    height: 40px;
+    margin-left: 15px;
+}
+
+.nombre_encabezado{
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 30px;
+    color: #fcfcfc;
+    -webkit-text-stroke: 1px #000000;
+}
+
+.nombre_encabezado #G,
+.nombre_encabezado #A{
+    color: #3b98c3;
+}
+
+.contenedor_principal {
+    height: 85vh;
+    width: 30%;
+    background-color: transparent;
+    margin: 0px auto;
+    padding-bottom: 29px;
+    padding-top: 15px;
+}
+
+.columna_imagen_izquierda, .columna_imagen_derecha {
+    position: absolute;
+    top: 50%;
+    width: 70%;
+    height: auto;
+    top: 5%;
+}
+
+
+.columna_imagen_izquierda {
+    right: 65%;
+}
+
+.columna_imagen_derecha {
+    left: 65%;
+
+}
+
+.fecha_retroceder {
+    width: 40px;
+    margin-left: 5px;
+}
+
+.logo_principal{
+    width: 60%;
+    display: block;
+    margin: 60px auto 0px;
+}
+
+.titulo{
+    font-size: 40px;
+    color: #3b98c3;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.subtitulo{
+    font-size: 20px;
+    color: #eca94e;
+    display: block;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.formulario label {
+    color: #3b98c3;
+    font-size: 24px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+
+input, select{
+    display: block;
+    width: 95%;
+    padding: 8px;
+    background-color: #c7c6c6;
+    border:0.02px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 auto 5px auto;
+    box-sizing: border-box;
+}
+
+.errores{
+    color: #eca94e;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.boton_continuar{
+    color: #fcfcfc;
+    width: 30%;
+    background-color: #3b98c3;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    margin: 80px auto 20px;
+    border:0.02px solid #000000;
+    border-radius: 5px;
+    padding: 8px 40px;
+    cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #3b98c3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/Trabajo Integrador/static/img/Logo.ico" />
-    <link rel="stylesheet" href="/Trabajo Integrador/static/css/style_usuario_clave.css">
+    <link rel="icon" href="/static/img/Logo.ico" />
+    <link rel="stylesheet" href="/static/css/style_usuario_clave.css">
     <title>GlobalArg</title>
 </head>
 
 <header>
     <div class="banda_celeste">
-        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" srcset="">
+        <img class="logo" src="/static/img/Logo.svg" alt="Logo" srcset="">
         <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
 </header>
@@ -18,15 +18,15 @@
 <body id="pagina_web">
 
     <div class="columna_imagen_izquierda">
-        <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
     </div>
 
     <div class="contenedor_principal">
 
-            <img class="fecha_retroceder" src="/Trabajo Integrador/static/img/Flecha retroceder.svg" alt="Volver" />
+            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
-        <form id="formulario" action="/Trabajo Integrador/templates/condiciones_legales.html" method="get">
+        <form id="formulario" action="/templates/condiciones_legales.html" method="get">
 
             <h1 class="titulo">Crear Usuario</h1>
             <p class="subtitulo">- Elegí tu Usuario y Clave para luego poder acceder a tu cuenta</p>
@@ -34,26 +34,30 @@
             <div class="formulario">
 
             <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" name="usuario" required />
-            <span id="error_usuario"></span>
+            <input type="text" id="usuario" name="usuario"/>
+            <div class="errores">
+                <span id="error_usuario"></span>
+            </div>
 
             <label for="password">Clave</label>
-            <input type="int" id="password" name="clave" required />
+            <input type="int" id="password" name="clave"/>
+            <div class="errores">
             <span id="error_password"></span>
+            </div>
             
             </div>
 
         </form>
 
-         <a href="/Trabajo Integrador/templates/iniciar_sesion.html" class="boton_continuar">Continuar</a>
+         <button type="submit" id="continuar" class="boton_continuar">Continuar</button>
 
     </div>
 
     <div class="columna_imagen_derecha">
-        <img src="/Trabajo Integrador/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+        <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
 
-    <script src="/Trabajo Integrador/static/js/index_usuario_clave.js"></script>
+    <script src="/static/js/index_usuario_clave.js"></script>
 </body>
 
 <footer>
