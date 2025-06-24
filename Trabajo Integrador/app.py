@@ -28,6 +28,14 @@ def index():
 def new_account():
     return render_template('datos_personales.html')
 
+@app.route('/login')
+def login():
+    return render_template('iniciar_sesion.html')
+
+@app.route('/registro')
+def registro():
+    return render_template('datos_personales.html')
+
 @app.route('/pais')
 def pais():
     return render_template('pais_residencia.html')
@@ -48,10 +56,6 @@ def condiciones():
 def crear_usuario_clave():
     return render_template('usuario_clave.html')
 
-@app.route('/login')
-def login():
-    return render_template('iniciar_sesion.html')
-
 @app.route('/inicio')
 def inicio():
     return render_template('billetera.html')
@@ -59,6 +63,10 @@ def inicio():
 @app.route('/transfer')
 def transfer():
     return render_template('transfer.html')
+
+@app.route('/ajustes_varios')
+def ajustes_varios():
+    return render_template('ajustes.html')
 
 @app.route('/modificar_datos')
 def modificar_datos():

@@ -36,7 +36,7 @@
             <div class="formulario">
 
                 <label for="cbu">CBU:</label>
-                <input type="text" id="cbu" name="cbu"/>
+                <input type="int" id="cbu" name="cbu"/>
                 <div class="errores">
                     <span id="error_cbu"></span>
                 </div>
@@ -49,7 +49,7 @@
                 
 
                 <label for="importe">Importe:</label>
-                <input type="text" id="importe" name="importe"/>
+                <input type="int" id="importe" name="importe"/>
                 <div class="errores">
                     <span id="error_importe"></span> 
                 </div>
@@ -57,9 +57,9 @@
                 <label for="cuenta">Cuenta:</label>
                     <select id="genero" name="genero">
                         <option value=""> </option>
-                        <option id= "opcion1" value="femenino">Propia</option>
-                        <option id= "opcion2" value="masculino">No Propia</option>
-                        <option id= "opcion3" value="no_binario">Otro/s</option>
+                        <option id= "opcion1" value="priopia">Propia</option>
+                        <option id= "opcion2" value="no_propia">No Propia</option>
+                        <option id= "opcion3" value="otros">Otro/s</option>
                     </select>
                 <div class="errores">
                     <span id="error_cuenta"></span>
@@ -68,15 +68,15 @@
                 <label for="concepto">Concepto:</label>
                     <select id="concepto" name="concepto">
                         <option value=""> </option>
-                        <option id= "opcion1" value="casado">Alquiler</option>
-                        <option id= "opcion2" value="divorciado">Cuota</option>
-                        <option id= "opcion3" value="soltero">Expensas</option>
-                        <option id= "opcion4"value="viudo">Factura</option>
-                        <option id= "opcion5"value="viudo">Haberes</option>
-                        <option id= "opcion6"value="viudo">Honorarios</option>
-                        <option id= "opcion7"value="viudo">Prestamo</option>
-                        <option id= "opcion8"value="viudo">Seguro</option>
-                        <option id= "opcion9"value="viudo">Varios</option>
+                        <option id= "opcion1" value="alquiler">Alquiler</option>
+                        <option id= "opcion2" value="cuota">Cuota</option>
+                        <option id= "opcion3" value="expensas">Expensas</option>
+                        <option id= "opcion4"value="factura">Factura</option>
+                        <option id= "opcion5"value="haberes">Haberes</option>
+                        <option id= "opcion6"value="honorarios">Honorarios</option>
+                        <option id= "opcion7"value="prestamos">Prestamo</option>
+                        <option id= "opcion8"value="seguro">Seguro</option>
+                        <option id= "opcion9"value="varios">Varios</option>
                     </select>
                 <div class="errores">
                     <span id="error_concepto"></span>
