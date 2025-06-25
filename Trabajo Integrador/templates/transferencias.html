@@ -24,7 +24,7 @@
             <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
         </div>
 
-        <a href="/templates/billetera.html">
+        <a id="flecha_retroceder">
             <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
@@ -35,14 +35,14 @@
 
             <div class="formulario">
 
-                <label for="cbu">CBU:</label>
-                <input type="int" id="cbu" name="cbu"/>
+                <label for="cbu">Origen:</label>
+                <input type="int" id="origen" name="cbu"/>
                 <div class="errores">
                     <span id="error_cbu"></span>
                 </div>
 
                 <label for="alias">Alias:</label>
-                <input type="text" id="alias" name="alias"/>
+                <input type="text" id="destino" name="alias"/>
                 <div class="errores">
                     <span id="error_alias"></span> 
                 </div>
@@ -93,10 +93,13 @@
 
     </div>
 
-    <script src="/static/js/index_datos_personales.js"></script>
+    <script src="/static/js/index_transferencias.js"></script>
 
     <script>
-        document.getElementById("continuar").addEventListener("click", function() {
+        // document.getElementById("continuar").addEventListener("click", function() {
+        //     window.location.href = "/inicio";  
+        // });
+        document.getElementById("flecha_retroceder").addEventListener("click", function() {
             window.location.href = "/inicio";  
         });
     </script>

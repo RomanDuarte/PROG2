@@ -62,7 +62,7 @@ def inicio():
 
 @app.route('/transfer')
 def transfer():
-    return render_template('transferencia.html')
+    return render_template('transferencias.html')
 
 @app.route('/ajustes_varios')
 def ajustes_varios():
@@ -169,47 +169,38 @@ def api_registro():
 
 
 # # API transferencia
-# @app.route('/api/transfer', methods=['POST'])
-# def api_transfer():
-#     data = request.json
-#     usuario_origen = data.get('usuario_origen')
-#     usuario_destino = data.get('usuario_destino')
-#     monto = data.get('monto')
+@app.route('/api/transfer', methods=['POST'])
+def api_transfer():
+    data = request.json
+    usuario_origen = data.get('origen')
+    usuario_destino = data.get('destino')
+    monto = data.get('monto')
 
-#     if not usuario_origen or not usuario_destino or monto is None:
-#         return jsonify({'status': 'error', 'mensaje': 'Faltan datos'}), 400
+    if not usuario_origen or not usuario_destino or monto is None:
+        return jsonify({'status': 'error', 'mensaje': 'Faltan datos'}), 400
 
-#     try:
-#         monto = float(monto)
-#     except ValueError:
-#         return jsonify({'status': 'error', 'mensaje': 'Monto inválido'}), 400
+    try:
+        monto = float(monto)
+    except ValueError:
+        return jsonify({'status': 'error', 'mensaje': 'Monto inválido'}), 400
 
-#     if monto <= 0:
-#         return jsonify({'status': 'error', 'mensaje': 'Monto debe ser positivo'}), 400
+    if monto <= 0:
+        return jsonify({'status': 'error', 'mensaje': 'Monto debe ser positivo'}), 400
 
-#     origen = Usuario.query.filter_by(user=usuario_origen).first()
-#     destino = Usuario.query.filter_by(user=usuario_destino).first()
+    origen = Usuario.query.filter_by(user=usuario_origen).first()
+    destino = Usuario.query.filter_by(user=usuario_destino).first()
 
-#     if not origen or not destino:
-#         return jsonify({'status': 'error', 'mensaje': 'Usuarios inválidos'}), 404
+    if not origen or not destino:
+        return jsonify({'status': 'error', 'mensaje': 'Usuarios inválidos'}), 404
 
-#     if origen.saldo < monto:
-#         return jsonify({'status': 'error', 'mensaje': 'Saldo insuficiente'}), 400
+    if origen.saldo < monto:
+        return jsonify({'status': 'error', 'mensaje': 'Saldo insuficiente'}), 400
 
-#     # Realizar transferencia
-#     origen.saldo -= monto
-#     destino.saldo += monto
+    origen.saldo -= monto
+    destino.saldo += monto
+    db.session.commit()
 
-#     transferencia = Transferencia(
-#         emisor_id=origen.id,
-#         receptor_id=destino.id,
-#         monto=monto
-#     )
-
-#     db.session.add(transferencia)
-#     db.session.commit()
-
-#     return jsonify({'status': 'ok', 'mensaje': f'Transferidos {monto} de {usuario_origen} a {usuario_destino}'})
+    return jsonify({'status': 'ok','monto': origen.saldo ,'mensaje': f'Transferidos {monto} de {usuario_origen} a {usuario_destino}'})
 
 if __name__ == '__main__':
     app.run(debug=True)

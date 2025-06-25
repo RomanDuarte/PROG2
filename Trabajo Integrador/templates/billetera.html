@@ -41,7 +41,7 @@
 
             <div class="boton_contenedor">
                 <button class="botones_redondos" id="boton_ingresar">Ingresar</button>
-                <a class="botones_redondos" id="boton_transferir" href="/templates/transferencias.html">Transferir</a>
+                <a class="botones_redondos" id="boton_transferir" >Transferir</a>
             </div>
 
             <div class="boton_contenedor2">
@@ -85,7 +85,9 @@
             document.getElementById("boton_inicio").addEventListener("click", function() {
                             window.location.href = "/";  
                             });
-
+            document.getElementById("boton_transferir").addEventListener("click", function() {
+                            window.location.href = "/transfer";  
+                            });
     </script>
 
     </body>
