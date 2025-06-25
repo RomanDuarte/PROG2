@@ -9,6 +9,10 @@ class Usuario(db.Model):
     password = db.Column(db.String(80), nullable=False)
     nombre = db.Column(db.String(50), nullable=False)
     apellido = db.Column(db.String(50), nullable=False)
+    fecha_nacimiento = db.Column(db.String(50), nullable=False)
+    pais = db.Column(db.String(50), nullable=False)
+    genero = db.Column(db.String(50), nullable=False)
+    estado_civil=db.Column(db.String(50), nullable=False)
     saldo = db.Column(db.Float, default=0.0)
 
     transferencias_enviadas = db.relationship('Transferencia', foreign_keys='Transferencia.emisor_id', backref='emisor', lazy=True)

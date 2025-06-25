@@ -24,7 +24,7 @@
             <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
         </div>
 
-        <a href="/templates/pagina_principal.html">
+        <a id="flecha_volver">
             <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
@@ -91,8 +91,8 @@
     <script src="/static/js/index_datos_personales.js"></script>
 
     <script>
-        document.getElementById("continuar").addEventListener("click", function() {
-            window.location.href = "/pais";  
+        document.getElementById("flecha_volver").addEventListener("click", function() {
+            window.location.href = "/";  
         });
     </script>
 </body>

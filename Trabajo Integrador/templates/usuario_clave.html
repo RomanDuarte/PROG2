@@ -16,16 +16,11 @@
 </header>
 
 <body id="pagina_web">
-
     <div class="columna_imagen_izquierda">
         <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
     </div>
-
     <div class="contenedor_principal">
-
-            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
-        </a>
-
+            <a id="flecha_volver" ><img class="fecha_retroceder" id="flecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver"/> </a>
         <form id="formulario" method="get">
 
             <h1 class="titulo">Crear Usuario</h1>
@@ -58,11 +53,12 @@
     </div>
 
      <script src="/static/js/index_usuario_clave.js"></script>
-
     <script>
-        document.getElementById("tengo_cuenta").addEventListener("click", function() {
-            window.location.href = "/login";  
+                document.getElementById("flecha_retroceder").addEventListener("click", function() {
+            window.location.href = "/condiciones";  
         });
+
+
     </script>
 </body>
 

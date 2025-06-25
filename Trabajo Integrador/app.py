@@ -12,10 +12,10 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
     if not Usuario.query.first():
-        u1 = Usuario(user="admin", email="admin@mail.com", password=generate_password_hash("1234"), nombre="Admin", apellido="admin", saldo=5000)
-        u2 = Usuario(user="franco", email="franco@mail.com", password=generate_password_hash("123456"), nombre="Franco", apellido="pascua", saldo=7500)
-        u3 = Usuario(user="martina", email="martina@gmail.com", password=generate_password_hash("123456"), nombre="Franco", apellido="p", saldo=7500)
-        u4 = Usuario(user="ulises", email="ulises@mail.com", password=generate_password_hash("123456"), nombre="Franco", apellido="p", saldo=7500)
+        u1 = Usuario(user="admin", email="admin@mail.com", password=generate_password_hash("1234"),pais='China', nombre="Admin", apellido="admin",fecha_nacimiento="1/1/1900",genero="no binario",estado_civil="viudo" ,saldo=999999)
+        u2 = Usuario(user="Franco", email="francopascu7@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Franco", apellido="Pascua",fecha_nacimiento="9/9/2001",genero="Masculino",estado_civil="Soltero", saldo=5000)
+        u3 = Usuario(user="Martina", email="Martina@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Martina", apellido="Masanes",fecha_nacimiento="9/9/1990",genero="Femenino",estado_civil="Soltero", saldo=5000)
+        u4 = Usuario(user="Ulises", email="ulises7@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Ulises", apellido="Gunetti",fecha_nacimiento="9/9/2005",genero="Masculino",estado_civil="Soltero" ,saldo=5000)
         db.session.add_all([u1, u2, u3, u4])
         db.session.commit()
 
@@ -85,132 +85,131 @@ def politica():
     return render_template('politica_privacidad.html')
 
 
-# API login
+# # API login
 @app.route('/api/login', methods=['POST'])
 def api_login():
     data = request.json
     usuario_input = data.get("usuario")
     password_input = data.get("clave")
-    usuario = Usuario.query.filter_by(user=usuario_input).first()
-    if usuario and check_password_hash(usuario.password, password_input):
+    usuario1 = Usuario.query.filter_by(user=usuario_input).first()
+    if usuario1 and check_password_hash(usuario1.password, password_input):
         return jsonify({
             'status': 'ok',
-            "nombre": usuario.nombre,
-            "apellido": usuario.apellido,
-            "email": usuario.email,
-            "saldo": usuario.saldo,
+            "nombre": usuario1.nombre,
+            "apellido": usuario1.apellido,
+            "email": usuario1.email,
+            "saldo": usuario1.saldo,
         })
     return jsonify({'status': 'error'}), 401
 
-# API registro
+# # API registro
 @app.route('/api/registro', methods=['POST'])
 def api_registro():
-    data = request.json
+    data = request.get_json()
+
     usuario = data.get("usuario")
-    email = data.get("email")
+    clave = data.get("clave")
     nombre = data.get("nombre")
     apellido = data.get("apellido")
-    password = data.get("password")
+    email = data.get("email")
+    genero = data.get("genero")
+    estado_civil = data.get("estado_civil")
+    fecha_nacimiento = data.get("fecha_nacimiento")
+    pais=data.get('pais')
 
+    # Validar que no exista ya el usuario o el email
     if Usuario.query.filter_by(user=usuario).first():
-        return jsonify({'status': 'error', 'mensaje': 'Usuario ya existe'}), 400
+        return jsonify({'status': 'error', 'mensaje': 'Nombre de usuario ya registrado'}), 400
+    if Usuario.query.filter_by(email=email).first():
+        return jsonify({'status': 'error', 'mensaje': 'Email ya registrado'}), 400
 
-    hashed_password = generate_password_hash(password)
-
-    nuevo_usuario = Usuario(
-        user=usuario,
-        email=email,
-        nombre=nombre,
-        apellido=apellido,
-        password=hashed_password,
-        saldo=0
-    )
+    nuevo_usuario = Usuario(user=usuario, email=email, password=generate_password_hash(clave),pais=pais, nombre=nombre, apellido=apellido,fecha_nacimiento=fecha_nacimiento,genero=genero,estado_civil=estado_civil,saldo=0)
     db.session.add(nuevo_usuario)
     db.session.commit()
     return jsonify({'status': 'ok'})
 
-# API cambiar datos personales
+# # API cambiar datos personales
 
-@app.route('/api/usuarios/<int:id>', methods=['PUT'])
-def modificar_datos(id):
-    datos = request.get_json()
-    usuario = Usuario.query.get(id)
+# @app.route('/api/usuarios/<int:id>', methods=['PUT'])
+# def modificar_datos(id):
+#     datos = request.get_json()
+#     usuario = Usuario.query.get(id)
 
-    if not usuario:
-        return jsonify({'error': 'Usuario no encontrado'}), 404
+#     if not usuario:
+#         return jsonify({'error': 'Usuario no encontrado'}), 404
 
-    usuario.primer_nombre = datos.get('primer_nombre', usuario.primer_nombre)
-    usuario.apellido = datos.get('apellido', usuario.apellido)
-    usuario.fecha_nacimiento = datos.get('fecha_nacimiento', usuario.fecha_nacimiento)
-    usuario.genero = datos.get('genero', usuario.genero)
-    usuario.estado_civil = datos.get('estado_civil', usuario.estado_civil)
-    usuario.email = datos.get('email', usuario.email)
-    usuario.usuario = datos.get('usuario', usuario.usuario)
-    usuario.clave = datos.get('clave', usuario.clave)
+#     usuario.primer_nombre = datos.get('primer_nombre', usuario.primer_nombre)
+#     usuario.apellido = datos.get('apellido', usuario.apellido)
+#     usuario.fecha_nacimiento = datos.get('fecha_nacimiento', usuario.fecha_nacimiento)
+#     usuario.genero = datos.get('genero', usuario.genero)
+#     usuario.estado_civil = datos.get('estado_civil', usuario.estado_civil)
+#     usuario.email = datos.get('email', usuario.email)
+#     usuario.usuario = datos.get('usuario', usuario.usuario)
+#     usuario.clave = datos.get('clave', usuario.clave)
 
-    db.session.commit()
-    return jsonify({'mensaje': 'Usuario actualizado correctamente'})
-
-
-# API eliminar cuenta
-@app.route('/api/usuarios/<int:id>/eliminar', methods=['POST'])
-def delete_cuenta(id):
-    datos = request.get_json()
-    usuario = Usuario.query.get(id)
-
-    if not usuario:
-        return jsonify({'error': 'Usuario no encontrado'}), 404
-
-    if usuario.usuario != datos.get('usuario') or usuario.clave != datos.get('clave'):
-        return jsonify({'error': 'Usuario o clave incorrectos'}), 401
-
-    db.session.delete(usuario)
-    db.session.commit()
-    return jsonify({'mensaje': 'Cuenta eliminada correctamente'})
+#     db.session.commit()
+#     return jsonify({'mensaje': 'Usuario actualizado correctamente'})
 
 
-# API transferencia
-@app.route('/api/transfer', methods=['POST'])
-def api_transfer():
-    data = request.json
-    usuario_origen = data.get('usuario_origen')
-    usuario_destino = data.get('usuario_destino')
-    monto = data.get('monto')
+# # API eliminar cuenta
+# @app.route('/api/usuarios/<int:id>/eliminar', methods=['POST'])
+# def delete_cuenta(id):
+#     datos = request.get_json()
+#     usuario = Usuario.query.get(id)
 
-    if not usuario_origen or not usuario_destino or monto is None:
-        return jsonify({'status': 'error', 'mensaje': 'Faltan datos'}), 400
+#     if not usuario:
+#         return jsonify({'error': 'Usuario no encontrado'}), 404
 
-    try:
-        monto = float(monto)
-    except ValueError:
-        return jsonify({'status': 'error', 'mensaje': 'Monto inválido'}), 400
+#     if usuario.usuario != datos.get('usuario') or usuario.clave != datos.get('clave'):
+#         return jsonify({'error': 'Usuario o clave incorrectos'}), 401
 
-    if monto <= 0:
-        return jsonify({'status': 'error', 'mensaje': 'Monto debe ser positivo'}), 400
+#     db.session.delete(usuario)
+#     db.session.commit()
+#     return jsonify({'mensaje': 'Cuenta eliminada correctamente'})
 
-    origen = Usuario.query.filter_by(user=usuario_origen).first()
-    destino = Usuario.query.filter_by(user=usuario_destino).first()
 
-    if not origen or not destino:
-        return jsonify({'status': 'error', 'mensaje': 'Usuarios inválidos'}), 404
+# # API transferencia
+# @app.route('/api/transfer', methods=['POST'])
+# def api_transfer():
+#     data = request.json
+#     usuario_origen = data.get('usuario_origen')
+#     usuario_destino = data.get('usuario_destino')
+#     monto = data.get('monto')
 
-    if origen.saldo < monto:
-        return jsonify({'status': 'error', 'mensaje': 'Saldo insuficiente'}), 400
+#     if not usuario_origen or not usuario_destino or monto is None:
+#         return jsonify({'status': 'error', 'mensaje': 'Faltan datos'}), 400
 
-    # Realizar transferencia
-    origen.saldo -= monto
-    destino.saldo += monto
+#     try:
+#         monto = float(monto)
+#     except ValueError:
+#         return jsonify({'status': 'error', 'mensaje': 'Monto inválido'}), 400
 
-    transferencia = Transferencia(
-        emisor_id=origen.id,
-        receptor_id=destino.id,
-        monto=monto
-    )
+#     if monto <= 0:
+#         return jsonify({'status': 'error', 'mensaje': 'Monto debe ser positivo'}), 400
 
-    db.session.add(transferencia)
-    db.session.commit()
+#     origen = Usuario.query.filter_by(user=usuario_origen).first()
+#     destino = Usuario.query.filter_by(user=usuario_destino).first()
 
-    return jsonify({'status': 'ok', 'mensaje': f'Transferidos {monto} de {usuario_origen} a {usuario_destino}'})
+#     if not origen or not destino:
+#         return jsonify({'status': 'error', 'mensaje': 'Usuarios inválidos'}), 404
+
+#     if origen.saldo < monto:
+#         return jsonify({'status': 'error', 'mensaje': 'Saldo insuficiente'}), 400
+
+#     # Realizar transferencia
+#     origen.saldo -= monto
+#     destino.saldo += monto
+
+#     transferencia = Transferencia(
+#         emisor_id=origen.id,
+#         receptor_id=destino.id,
+#         monto=monto
+#     )
+
+#     db.session.add(transferencia)
+#     db.session.commit()
+
+#     return jsonify({'status': 'ok', 'mensaje': f'Transferidos {monto} de {usuario_origen} a {usuario_destino}'})
 
 if __name__ == '__main__':
     app.run(debug=True)

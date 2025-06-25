@@ -25,7 +25,7 @@
                 <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
             </div>
 
-            <a href="/templates/datos_personales.html">
+            <a id="flecha_volver">
                 <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
             </a> 
 
@@ -37,11 +37,11 @@
 
                 <select name="pais" id="pais">
                     <option value="">  </option>
-                    <option value="">Argentina</option>
-                    <option value="">Brasil</option>
-                    <option value="">Chile</option>
-                    <option value="">Paraguay</option>
-                    <option value="">Uruguay</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Uruguay">Uruguay</option>
                 </select>
                 <div class="errores">
                     <span id="error_pais"></span>
@@ -65,6 +65,9 @@
       <script>
         document.getElementById("continuar").addEventListener("click", function() {
             window.location.href = "/datos_domicilio";  
+        });
+        document.getElementById("flecha_volver").addEventListener("click", function() {
+            window.location.href = "/registro";  
         });
     </script>
      

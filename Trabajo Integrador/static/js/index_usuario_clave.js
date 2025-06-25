@@ -6,8 +6,49 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         e.preventDefault();
     }else {
         e.preventDefault();
-        window.location.href = '/crear_usuario_clave';
     }
+
+
+const new_user=document.getElementById('usuario').value;
+
+const new_user_password=document.getElementById('password').value;
+localStorage.setItem("password", new_user_password);
+const nombre = localStorage.getItem("register_nombre");
+const apellido = localStorage.getItem("register_apellido");
+const fecha_nac = localStorage.getItem("register_fecha_nacimiento");
+const genero = localStorage.getItem("register_genero");
+const estado_civil = localStorage.getItem("register_estado_civil");
+const pais = localStorage.getItem("register_pais");
+const email = localStorage.getItem("register_email");
+
+fetch("/api/registro", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        usuario: new_user,
+        clave: new_user_password,
+        nombre: nombre,
+        apellido: apellido,
+        fecha_nacimiento:fecha_nac,
+        email: email,
+        genero: genero,
+        pais:pais,
+        estado_civil: estado_civil
+    })
+})
+.then(res => res.json())
+.then(data => {
+    if (data.status === "ok") {
+        alert("Registro exitoso");
+        window.location.href = "/login";
+    } else {
+        alert("Error en el registro: " + data.mensaje);
+    }
+})
+.catch(err => {
+    console.error("Error en el registro:", err);
+});
+
 });
 
 function validarUsuario() {
@@ -59,3 +100,4 @@ document.getElementById("continuar").addEventListener("click", function() {
     } else {
     }
 });
+

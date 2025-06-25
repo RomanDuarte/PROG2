@@ -8,8 +8,12 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         e.preventDefault();
     }else {
         e.preventDefault();
-        window.location.href = '/email';
+        
     }
+
+    window.location.href = '/email';
+
+
 });
 
 function validarCalle() {

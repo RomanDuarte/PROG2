@@ -23,11 +23,11 @@
             <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
         </div>
 
-        <a href="/templates/domicilio.html">
+        <a id="flecha_volver">
             <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
-        <form id="formulario" action="/templates/domicilio.html" method="get">
+        <form id="formulario"  method="get">
 
             <h1 class="titulo">Verifique su correo electronico</h1>
             <p class="subtitulo">- Te enviaremos un código de confirmación</p>
@@ -41,8 +41,6 @@
                 </div>
                 
             </div>
-
-
             <button type="submit" id="continuar" class="boton_continuar">Continuar</button>
         </form>
 
@@ -67,6 +65,9 @@
 
         document.getElementById("politica").addEventListener("click", function() {
             window.location.href = "/politica";  
+        });
+        document.getElementById("flecha_volver").addEventListener("click", function() {
+            window.location.href = "/datos_domicilio";  
         });
 
     </script>

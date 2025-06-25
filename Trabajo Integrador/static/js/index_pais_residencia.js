@@ -5,8 +5,11 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         e.preventDefault();
     }else {
         e.preventDefault();
-        window.location.href = '/datos_domicilio';
     }
+
+        const new_pais=document.getElementById('pais').value
+        localStorage.setItem("register_pais",new_pais );
+        window.location.href = '/datos_domicilio';
 });
 
 function validarPais() {

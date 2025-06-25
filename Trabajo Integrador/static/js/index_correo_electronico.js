@@ -5,13 +5,14 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         e.preventDefault();
     }else {
         e.preventDefault();
-        window.location.href = '/condiciones';
+        const new_email=document.getElementById('email').value
+        localStorage.setItem("register_email",new_email );
     }
 });
 
 function validarEmail() {
     const email = document.getElementById("email").value.trim();
-    const error = document.getElementById("error_email");
+    const error = document.getElementById("error_correo_electronico");
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (email === "") {
