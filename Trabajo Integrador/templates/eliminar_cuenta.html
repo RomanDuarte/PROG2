@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/static/img/Logo.ico">
-    <link rel="stylesheet" href="/Trabajo Integrador/static/css/style_eliminar_cuenta.css">
+    <link rel="stylesheet" href="/static/css/style_eliminar_cuenta.css">
     <title>GlobalArg</title>
 </head>
 
 <header>
     <div class="banda_celeste">
-        <img class="logo" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" >
+        <img class="logo" src="/static/img/Logo.svg" alt="Logo" >
         <p class="nombre_encabezado"><span id="G">G</span>lobal<span id="A">A</span>rg</p>
     </div>
 </header>
@@ -18,17 +18,17 @@
 <body id="pagina_web">
 
     <div class="columna_imagen_izquierda">
-        <img src="/Trabajo Integrador/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
+        <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
     </div>
 
     <div class="contenedor_principal">
 
-        <a href="/Trabajo Integrador/templates/ajustes.html">
-            <img class="fecha_retroceder" src="/Trabajo Integrador/static/img/Flecha retroceder.svg" alt="Volver" />
+        <a id="flecha_retroceder">
+            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
         <div class="logo_principal">
-            <img id="logo.png" src="/Trabajo Integrador/static/img/Logo.svg" alt="Logo" height="350px"></a>
+            <img id="logo.png" src="/static/img/Logo.svg" alt="Logo" height="350px"></a>
         </div>
 
         <form id="formulario" method="get">
@@ -50,14 +50,14 @@
                 </div>
                 </div>
             
-            <button type="submit" class="boton_continuar">Eliminar</button>
+            <button id="continuar" type="submit" class="boton_continuar">Eliminar</button>
         </form>
 
 
     </div>
 
     <div class="columna_imagen_derecha">
-        <img src="/Trabajo Integrador/static/img/Mapa Mundo derecha.svg" alt="fondo_mundo" />
+        <img src="/static/img/Mapa Mundo derecha.svg" alt="fondo_mundo" />
     </div>
     
 
@@ -65,6 +65,42 @@
         document.getElementById("continuar").addEventListener("click", function() {
             window.location.href = "/";  
         });
+        document.getElementById("flecha_retroceder").addEventListener("click", function() {
+                            window.location.href = "/ajustes_varios";  
+                            });
+
+        const usuario=document.getElementById('usuario').value;
+        const clave=document.getElementById('password').value;
+        const id=localStorage.getItem('id');
+    
+document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+    if (!usuario===''){
+    fetch(`/api/usuarios/${id}/eliminar`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        usuario: usuario,
+        clave: clave
+    })
+})
+.then(res => res.json())
+.then(data => {
+    if (data.mensaje === "Cuenta eliminada correctamente") {
+        alert("Cuenta eliminada");
+        localStorage.clear();
+        // window.location.href = "/";  
+    } else {
+        alert("Error al eliminar cuenta: " + data.error);
+    }
+})
+.catch(err => {
+    console.error("Error en la solicitud:", err);
+});
+    }
+
+});
+    
     </script>
 
 

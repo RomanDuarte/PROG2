@@ -64,7 +64,7 @@
 
                     <a class="botones_menu" href=""><h3>Ahorros</h3></a>
 
-                    <a class="botones_menu" href="/templates/ajustes.html"><h3>Ajustes</h3></a>
+                    <a class="botones_menu" id="ajustes"><h3>Ajustes</h3></a>
             </div>
 
         </form>
@@ -88,6 +88,10 @@
             document.getElementById("boton_transferir").addEventListener("click", function() {
                             window.location.href = "/transfer";  
                             });
+            document.getElementById("ajustes").addEventListener("click", function() {
+                            window.location.href = "/ajustes_varios";  
+                            });
+            
     </script>
 
     </body>

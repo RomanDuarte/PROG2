@@ -23,7 +23,7 @@
       <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
     </div>
 
-    <a href="/templates/billetera.html">
+    <a id="flecha_retroceder">
       <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
     </a>
 
@@ -40,9 +40,9 @@
 
       <div class="formulario">
       
-          <a href="/templates/cambio_datos_personales.html" class="enlaces">- Cambiar datos personales</a>
+          <a id="cambio_datos_personales" class="enlaces">- Cambiar datos personales</a>
 
-          <a href="/templates/eliminar_cuenta.html" class="enlaces">- Eliminar cuenta</a>
+          <a id="Eliminar_cuenta" class="enlaces">- Eliminar cuenta</a>
 
         
 
@@ -53,10 +53,21 @@
   </div>
 
   <div class="columna_imagen_derecha">
-    <img src="/Trabajo Integrador/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
+    <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
   </div>
 
   </div>
+  <script>
+            document.getElementById("cambio_datos_personales").addEventListener("click", function() {
+                            window.location.href = "/modificar_datos";  
+                            });
+            document.getElementById("Eliminar_cuenta").addEventListener("click", function() {
+                            window.location.href = "/delete_cuenta";  
+                            });
+            document.getElementById("flecha_retroceder").addEventListener("click", function() {
+                            window.location.href = "/inicio";  
+                            });
+    </script>
 </body>
 
 <footer>

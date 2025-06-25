@@ -25,6 +25,7 @@ const contra = document.getElementById("password").value;
             localStorage.setItem("apellidos", data.apellido);
             localStorage.setItem("email", data.email);
             localStorage.setItem("saldo", data.saldo);
+            localStorage.setItem("id", data.id);
         } else {
             alert('Login fallido');
             document.getElementById("formulario").reset();

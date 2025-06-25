@@ -99,6 +99,7 @@ def api_login():
             "apellido": usuario1.apellido,
             "email": usuario1.email,
             "saldo": usuario1.saldo,
+            "id":usuario1.id
         })
     return jsonify({'status': 'error'}), 401
 
@@ -152,20 +153,20 @@ def api_registro():
 
 
 # # API eliminar cuenta
-# @app.route('/api/usuarios/<int:id>/eliminar', methods=['POST'])
-# def delete_cuenta(id):
-#     datos = request.get_json()
-#     usuario = Usuario.query.get(id)
+@app.route('/api/usuarios/<int:id>/eliminar', methods=['POST'])
+def delete_cuentas(id):
+    datos = request.get_json()
+    usuario = Usuario.query.get(id)
 
-#     if not usuario:
-#         return jsonify({'error': 'Usuario no encontrado'}), 404
+    if not usuario:
+        return jsonify({'error': 'Usuario no encontrado'}), 404
 
-#     if usuario.usuario != datos.get('usuario') or usuario.clave != datos.get('clave'):
-#         return jsonify({'error': 'Usuario o clave incorrectos'}), 401
+    if usuario.user != datos.get('usuario') or usuario.password != datos.get('clave'):
+        return jsonify({'error': 'Usuario o clave incorrectos'}), 401
 
-#     db.session.delete(usuario)
-#     db.session.commit()
-#     return jsonify({'mensaje': 'Cuenta eliminada correctamente'})
+    db.session.delete(usuario)
+    db.session.commit()
+    return jsonify({'mensaje': 'Cuenta eliminada correctamente'})
 
 
 # # API transferencia
