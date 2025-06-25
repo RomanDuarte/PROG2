@@ -1,8 +1,8 @@
 Integrantes
 
-Martina Masanes
-Ulises Gunetti
-Franco Pascua
+Gunetti Ulises - Frontend 
+Masanes Martina - Frontend 
+Pascua Franco - Backend 
 Sergio Duarte
 
 GlobalARG
