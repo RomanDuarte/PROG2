@@ -72,12 +72,17 @@
                 <label for="provincia">Provincia</label>
                 <select name="provincia" id="provincia">
                     <option value="">  </option>
+<<<<<<< HEAD
                     <option value="Buenos Aires">Buenos Aires</option>
+=======
+                    <option value="BuenosAires">Buenos Aires</option>
+>>>>>>> 2be151640eda0dfb06d7016ede90600c9f72b160
                     <option value="Catamarca">Catamarca</option>
                     <option value="Chaco">Chaco</option>
                     <option value="Chubut">Chubut</option>
                     <option value="Cordoba">Córdoba</option>
                     <option value="Corrientes">Corrientes</option>
+<<<<<<< HEAD
                     <option value="Entre Rios">Entre Ríos</option>
                     <option value="Formosa">Formosa</option>
                     <option value="Jujuy">Jujuy</option>
@@ -95,6 +100,25 @@
                     <option value="Santiago del Estero">Santiago del Estero</option>
                     <option value="Tierra del Fuego">Tierra del Fuego</option>
                     <option value="Tucumán">Tucumán</option>
+=======
+                    <option value="EntreRios">Entre Ríos</option>
+                    <option value="Formosa">Formosa</option>
+                    <option value="Jujuy">Jujuy</option>
+                    <option value="LaPampa">La Pampa</option>
+                    <option value="LaRioja">La Rioja</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Misiones">Misiones</option>
+                    <option value="Neuquen">Neuquén</option>
+                    <option value="RioNegro">Río Negro</option>
+                    <option value="Salta">Salta</option>
+                    <option value="SanJuan">San Juan</option>
+                    <option value="SanLuis">San Luis</option>
+                    <option value="SantaCruz">Santa Cruz</option>
+                    <option value="SantaFe">Santa Fe</option>
+                    <option value="SantiagoDelEstero">Santiago del Estero</option>
+                    <option value="TierraDelFuego">Tierra del Fuego</option>
+                    <option value="Tucuman">Tucumán</option>
+>>>>>>> 2be151640eda0dfb06d7016ede90600c9f72b160
                 </select>
                 <div class="errores">
                     <span id="error_provincia"></span>
@@ -114,6 +138,7 @@
 
     <script>
         document.getElementById("continuar").addEventListener("click", function() {
+            e.preventDefault();
             window.location.href = "/email";  
         });
         document.getElementById("flecha_volver").addEventListener("click", function() {
