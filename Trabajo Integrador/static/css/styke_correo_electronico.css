@@ -173,3 +173,142 @@ input:hover{
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 479px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-bottom: 60px; /* Para evitar que el contenido quede oculto bajo el footer */
+    }
+
+    /* Ocultar imágenes laterales para no recargar */
+    .columna_imagen_izquierda,
+    .columna_imagen_derecha {
+        display: none;
+    }
+
+    /* Contenedor principal con padding cómodo y centrado */
+    .contenedor_principal {
+        width: 95%;
+        max-width: 400px; /* Limitar ancho máximo para móviles grandes */
+        height: auto;
+        padding: 15px 10px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* Titulares con márgenes y tamaños ajustados */
+    .titulo {
+        font-size: 24px;
+        margin: 20px 10px 10px 10px;
+        color: #3b98c3;
+        font-weight: bold;
+    }
+
+    .subtitulo {
+        font-size: 13px;
+        margin: 0 10px 15px 10px;
+        color: #eca94e;
+    }
+
+    /* Etiquetas de formulario más pequeñas pero legibles */
+    .formulario label {
+        font-size: 16px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    /* Inputs y selects responsivos */
+    input, select {
+        font-size: 14px;
+        width: 100%;
+        max-width: 100%;
+        padding: 8px;
+        margin: 0 auto 12px auto;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 0.02px solid #000;
+        background-color: #c7c6c6;
+        transition: transform 0.3s ease;
+    }
+
+    input:hover, select:hover {
+        transform: scaleY(1.1);
+    }
+
+    .errores {
+        font-size: 10px;
+        margin-left: 10px;
+        color: #eca94e;
+    }
+
+    /* Botón centrado, tamaño cómodo, sin posición absoluta */
+    .boton_continuar {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        display: block;
+        margin: 25px auto 0 auto;
+        font-size: 16px;
+        padding: 10px 30px;
+        width: fit-content;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #3b98c3;
+        color: #fcfcfc;
+        border: 0.02px solid #000;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .boton_continuar:hover {
+        background-color: #fcfcfc;
+        color: #3b98c3;
+        border-color: #3b98c3;
+    }
+
+    /* Encabezado logo y texto proporcional */
+    .nombre_encabezado {
+        font-size: 20px;
+        margin-left: 10px;
+        -webkit-text-stroke: 0.5px #000000;
+    }
+
+    .logo {
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    /* Footer compacto y legible */
+    .footer {
+        height: 45px;
+        font-size: 12px;
+        text-align: center;
+        padding: 5px 10px;
+        background-color: #3b98c3;
+        color: #fcfcfc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    /* Ajuste del subtitulo2 y enlaces para que no se superpongan */
+    .subtitulo2 {
+        font-size: 14px;
+        color: #eca94e;
+        margin: 30px 15px 0 15px;
+        text-align: center;
+    }
+
+    .enlaces {
+        color: #eca94e;
+        font-weight: bold;
+        text-decoration: none;
+        padding-bottom: 5px;
+        display: inline-block;
+        margin: 5px 0;
+    }
+}

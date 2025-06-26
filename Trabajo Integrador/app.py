@@ -154,27 +154,35 @@ def api_modificar_datos(id):
 
 
 # # API eliminar cuenta
-@app.route('/api/usuarios/<int:id>/eliminar', methods=['POST'])
-def delete_cuentas(id):
+@app.route('/api/usuarios/eliminar', methods=['POST'])
+def delete_usuario_completo():
     datos = request.get_json()
-    usuario = Usuario.query.get(id)
-
-    if not usuario:
-        return jsonify({'error': 'Usuario no encontrado'}), 404
 
     nombre_usuario = datos.get('usuario')
     clave = datos.get('clave', '')
 
-    if usuario.user != nombre_usuario:
-        return jsonify({'error': 'Usuario incorrecto'}), 401
+    if not nombre_usuario or not clave:
+        return jsonify({'error': 'Faltan datos'}), 400
+
+    usuario = Usuario.query.filter_by(user=nombre_usuario).first()
+
+    if not usuario:
+        return jsonify({'error': 'Usuario no encontrado'}), 404
 
     if not check_password_hash(usuario.password, clave):
         return jsonify({'error': 'Clave incorrecta'}), 401
 
+    for t in Transferencia.query.filter_by(emisor_id=usuario.id).all():
+        db.session.delete(t)
+
+    for t in Transferencia.query.filter_by(receptor_id=usuario.id).all():
+        db.session.delete(t)
+
     db.session.delete(usuario)
     db.session.commit()
 
-    return jsonify({'mensaje': 'Cuenta eliminada correctamente'})
+    return jsonify({'mensaje': f'Cuenta y datos de {nombre_usuario} eliminados correctamente'})
+
 
 
 # # API transferencia
