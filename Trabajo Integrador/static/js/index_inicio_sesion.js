@@ -19,7 +19,6 @@ const contra = document.getElementById("password").value;
     .then(res => res.json())
     .then(data => {
         if (data.status === 'ok') {
-            alert('Login correcto');
             window.location.href = "/inicio";
             localStorage.setItem("nombre", data.nombre);
             localStorage.setItem("apellidos", data.apellido);
@@ -27,8 +26,7 @@ const contra = document.getElementById("password").value;
             localStorage.setItem("saldo", data.saldo);
             localStorage.setItem("id", data.id);
         } else {
-            alert('Login fallido');
-            document.getElementById("formulario").reset();
+            document.getElementById("error_usuario").textContent = "Usuario incorrecto";
         }
     })
     .catch(err => {
@@ -77,9 +75,4 @@ document.getElementById("usuario").addEventListener('blur', validarUsuario);
 
 document.getElementById("password").addEventListener('input', validarPassword);
 document.getElementById("password").addEventListener('blur', validarPassword);
-
-// document.getElementById("continuar").addEventListener("click", function() {
-//     window.location.href = '/pais_residencia';  
-// });
-
 

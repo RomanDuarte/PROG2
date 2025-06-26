@@ -41,23 +41,34 @@
         </section>
     </div>
         <script>
-                    document.getElementById("tengo_cuenta").addEventListener("click", function() {
-                            window.location.href = "/login";  
-                            });
+
+        document.getElementById("tengo_cuenta").addEventListener("click", function() {
+            window.location.href = "/login";  
+        });
                     
-                    document.getElementById("crear_cuenta").addEventListener("click", function() {
-                            window.location.href = "/new_account";  
-                            });
+        document.getElementById("crear_cuenta").addEventListener("click", function() {
+            window.location.href = "/new_account";  
+            });
+            
         </script>
 </body>
 
 <footer>
     <div class="banda_celeste">
         <p>
-            <a id ="politica" href="/templates/politica_privacidad.html">Política de Privacidad</a> |
-            <a id ="condiciones" href="/templates/terminos_condiciones.html">Términos y Condiciones</a>
+            <a id ="politica">Política de Privacidad</a> |
+            <a id ="terminos">Términos y Condiciones</a>
         </p>
     </div>
+    <script>
+        document.getElementById("politica").addEventListener("click", function() {
+            window.location.href = "/politica";  
+        });
+
+        document.getElementById("terminos").addEventListener("click", function() {
+            window.location.href = "/terminos";  
+        });
+        </script>
 </footer>
 
 </html>

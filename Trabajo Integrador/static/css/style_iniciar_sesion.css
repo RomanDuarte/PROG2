@@ -69,6 +69,15 @@ body {
     transform: translateX(100%);
 }
 
+.fecha_retroceder {
+    width: 40px;
+    margin-left: 5px;
+}
+
+.fecha_retroceder:hover {
+    transform: scale(1.2);
+}
+
 .logo_principal {
     width: 60%;
     display: block;

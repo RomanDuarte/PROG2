@@ -23,8 +23,8 @@
             <img src="/static/img/Mapa Mundo Izquierda.svg" alt="fondo_mundo" />
         </div>
 
-        <a href="/templates/pagina_principal.html">
-            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
+        <a id="flecha_volver" >
+            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver"/>
         </a>
 
             <h1 class="titulo">Politicas de Privacidad</h1>
@@ -130,6 +130,13 @@
 
     </div>
     
+<script>
+        document.getElementById("flecha_volver").addEventListener("click", function() {
+            window.location.href = "/email";  
+        });
+
+    </script>
+
 </body>
 
 <footer>

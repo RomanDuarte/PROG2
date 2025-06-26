@@ -38,17 +38,12 @@
                 <p class="subtitulo">- Ingrese su usuario y clave -</p>
 
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario"/>
-                <div class="errores">
-                    <span id="error_usuario"></span>
-                </div>
+                <input type="text" id="usuario" name="usuario" required>
 
-                <label for="password">Clave:</label>
-                <input type="int" id="password" name="clave"/>
-                <div class="errores">
-                    <span id="error_password"></span>
-                </div>
-                </div>
+                <label for="clave">Clave:</label>
+                <input type="password" id="clave" name="clave" required>
+
+            </div>
             
             <button id="continuar" type="submit" class="boton_continuar">Eliminar</button>
         </form>
@@ -66,41 +61,11 @@
             window.location.href = "/";  
         });
         document.getElementById("flecha_retroceder").addEventListener("click", function() {
-                            window.location.href = "/ajustes_varios";  
-                            });
+            window.location.href = "/ajustes_varios";  
+        });
 
-        const usuario=document.getElementById('usuario').value;
-        const clave=document.getElementById('password').value;
-        const id=localStorage.getItem('id');
-    
-document.getElementById("formulario").addEventListener("submit", function(e) {
-    e.preventDefault();
-    if (!usuario===''){
-    fetch(`/api/usuarios/${id}/eliminar`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-        usuario: usuario,
-        clave: clave
-    })
-})
-.then(res => res.json())
-.then(data => {
-    if (data.mensaje === "Cuenta eliminada correctamente") {
-        alert("Cuenta eliminada");
-        localStorage.clear();
-        // window.location.href = "/";  
-    } else {
-        alert("Error al eliminar cuenta: " + data.error);
-    }
-})
-.catch(err => {
-    console.error("Error en la solicitud:", err);
-});
-    }
+                            
 
-});
-    
     </script>
 
 

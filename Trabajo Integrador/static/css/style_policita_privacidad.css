@@ -44,7 +44,7 @@ body {
 }
 
 .columna_imagen_izquierda, .columna_imagen_derecha {
-    position: absolute;
+    position: fixed;
     top: 50%;
     width: 70%;
     height: auto;

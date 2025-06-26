@@ -1,6 +1,7 @@
 from models import db, Usuario, Transferencia
 from flask import Flask, render_template, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -99,7 +100,8 @@ def api_login():
             "apellido": usuario1.apellido,
             "email": usuario1.email,
             "saldo": usuario1.saldo,
-            "id":usuario1.id
+            "id":usuario1.id,
+            "user": usuario1.user
         })
     return jsonify({'status': 'error'}), 401
 
@@ -129,27 +131,26 @@ def api_registro():
     db.session.commit()
     return jsonify({'status': 'ok'})
 
-# # API cambiar datos personales
+#API cambio de datos personales
+@app.route('/api/usuarios/<int:id>', methods=['PUT'])
+def api_modificar_datos(id):
+    datos = request.get_json()
+    usuario = Usuario.query.get(id)
 
-# @app.route('/api/usuarios/<int:id>', methods=['PUT'])
-# def modificar_datos(id):
-#     datos = request.get_json()
-#     usuario = Usuario.query.get(id)
+    if not usuario:
+        return jsonify({'error': 'Usuario no encontrado'}), 404
 
-#     if not usuario:
-#         return jsonify({'error': 'Usuario no encontrado'}), 404
+    usuario.nombre = datos.get('nombre', usuario.nombre)
+    usuario.apellido = datos.get('apellido', usuario.apellido)
+    usuario.fecha_nacimiento = datos.get('fecha_nacimiento', usuario.fecha_nacimiento)
+    usuario.genero = datos.get('genero', usuario.genero)
+    usuario.estado_civil = datos.get('estado_civil', usuario.estado_civil)
+    usuario.email = datos.get('email', usuario.email)
+    usuario.user = datos.get('user', usuario.user)
+    usuario.password = datos.get('password', usuario.password)
 
-#     usuario.primer_nombre = datos.get('primer_nombre', usuario.primer_nombre)
-#     usuario.apellido = datos.get('apellido', usuario.apellido)
-#     usuario.fecha_nacimiento = datos.get('fecha_nacimiento', usuario.fecha_nacimiento)
-#     usuario.genero = datos.get('genero', usuario.genero)
-#     usuario.estado_civil = datos.get('estado_civil', usuario.estado_civil)
-#     usuario.email = datos.get('email', usuario.email)
-#     usuario.usuario = datos.get('usuario', usuario.usuario)
-#     usuario.clave = datos.get('clave', usuario.clave)
-
-#     db.session.commit()
-#     return jsonify({'mensaje': 'Usuario actualizado correctamente'})
+    db.session.commit()
+    return jsonify({'mensaje': 'Usuario actualizado correctamente'})
 
 
 # # API eliminar cuenta
@@ -161,11 +162,18 @@ def delete_cuentas(id):
     if not usuario:
         return jsonify({'error': 'Usuario no encontrado'}), 404
 
-    if usuario.user != datos.get('usuario') or usuario.password != datos.get('clave'):
-        return jsonify({'error': 'Usuario o clave incorrectos'}), 401
+    nombre_usuario = datos.get('usuario')
+    clave = datos.get('clave', '')
+
+    if usuario.user != nombre_usuario:
+        return jsonify({'error': 'Usuario incorrecto'}), 401
+
+    if not check_password_hash(usuario.password, clave):
+        return jsonify({'error': 'Clave incorrecta'}), 401
 
     db.session.delete(usuario)
     db.session.commit()
+
     return jsonify({'mensaje': 'Cuenta eliminada correctamente'})
 
 

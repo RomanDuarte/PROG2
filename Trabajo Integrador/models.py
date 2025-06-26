@@ -23,3 +23,6 @@ class Transferencia(db.Model):
     emisor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
     receptor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
     monto = db.Column(db.Float, nullable=False)
+
+
+    

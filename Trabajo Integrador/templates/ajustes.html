@@ -27,11 +27,11 @@
       <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
     </a>
 
-    <form id="formulario" action="/templates/billetera.html" method="get">
+    <div id="formulario">
       
 
       <div class="logo_principal">
-            <img id="logo.png" src="/static/img/Logo.svg" alt="Logo" height="350px"></a>
+            <img id="logo.png" src="/static/img/Logo.svg" alt="Logo" height="350px">
       </div> 
 
       <h1 class="titulo">Configuraciones</h1>
@@ -40,15 +40,12 @@
 
       <div class="formulario">
       
-          <a id="cambio_datos_personales" class="enlaces">- Cambiar datos personales</a>
-
-          <a id="Eliminar_cuenta" class="enlaces">- Eliminar cuenta</a>
-
-        
+          <button id="cambio_datos_personales" class="enlaces">- Cambiar datos personales</button>
+          <button id="eliminar_cuenta" class="enlaces">- Eliminar cuenta</button>
 
       </div>
 
-    </form>
+    </div>
 
   </div>
 
@@ -58,16 +55,16 @@
 
   </div>
   <script>
-            document.getElementById("cambio_datos_personales").addEventListener("click", function() {
-                            window.location.href = "/modificar_datos";  
-                            });
-            document.getElementById("Eliminar_cuenta").addEventListener("click", function() {
-                            window.location.href = "/delete_cuenta";  
-                            });
-            document.getElementById("flecha_retroceder").addEventListener("click", function() {
-                            window.location.href = "/inicio";  
-                            });
-    </script>
+    document.getElementById("cambio_datos_personales").addEventListener("click", function() {
+      window.location.href = "/modificar_datos";  
+    });
+    document.getElementById("eliminar_cuenta").addEventListener("click", function() {
+      window.location.href = "/delete_cuenta"; 
+    });
+    document.getElementById("flecha_retroceder").addEventListener("click", function() {
+      window.location.href = "/inicio";  
+    });
+</script>
 </body>
 
 <footer>

@@ -23,7 +23,7 @@
 
     <div class="contenedor_principal">
 
-        <a href="/templates/ajustes.html">
+        <a id="flecha_retroceder">
             <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
         </a>
 
@@ -109,7 +109,16 @@
         <img src="/static/img/Mapa Mundo derecha.svg" alt="fondo_mundo" />
     </div>
 
-     <script src="/static/js/index_cambio_datos_personales.js"></script>
+     <script>
+        document.getElementById("continuar").addEventListener("click", function() {
+            window.location.href = "/";  
+        });
+
+        document.getElementById("flecha_retroceder").addEventListener("click", function() {
+            window.location.href = "/ajustes_varios";
+        });
+
+     </script>
 </body>
 
 <footer>

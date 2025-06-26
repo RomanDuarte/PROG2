@@ -23,6 +23,10 @@
 
     <div class="contenedor_principal">
 
+        <a id="flecha_volver">
+            <img class="fecha_retroceder" src="/static/img/Flecha retroceder.svg" alt="Volver" />
+        </a>
+
         <div class="logo_principal">
             <img id="logo.png" src="/static/img/Logo.svg" alt="Logo" height="350px"></a>
         </div>
@@ -55,6 +59,13 @@
         <img src="/static/img/Mapa Mundo Derecha.svg" alt="fondo_mundo" />
     </div>
     <script src="/static/js/index_inicio_sesion.js"></script>
+
+    <script>
+        document.getElementById("flecha_volver").addEventListener("click", function() {
+            window.location.href = "/";  
+        });
+
+    </script>
     <!-- <script>
         document.getElementById("continuar").addEventListener("click", function() {
             window.location.href = "/inicio";  

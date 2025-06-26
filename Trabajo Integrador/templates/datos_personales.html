@@ -36,26 +36,26 @@
             <div class="formulario">
 
                 <label for="primer_nombre">Nombre/s</label>
-                <input type="text" id="primer_nombre" name="primer_nombre"/>
+                <input type="text" id="primer_nombre" name="primer_nombre" required/>
                 <div class="errores">
                     <span id="error_nombre"></span>
                 </div>
 
                 <label for="apellido">Apellido/s</label>
-                <input type="text" id="apellido" name="apellido"/>
+                <input type="text" id="apellido" name="apellido" required/>
                 <div class="errores">
                     <span id="error_apellido"></span> 
                 </div>
                 
 
                 <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"/>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required/>
                 <div class="errores">
                     <span id="error_fecha"></span>
                 </div>
 
                 <label for="genero">Género</label>
-                    <select id="genero" name="genero">
+                    <select id="genero" name="genero" required>
                         <option value=""> </option>
                         <option id= "opcion1" value="femenino">Femenino</option>
                         <option id= "opcion2" value="masculino">Masculino</option>
@@ -66,7 +66,7 @@
                 </div>
 
                 <label for="estado_civil">Estado Civil</label>
-                    <select id="estado_civil" name="estado_civil">
+                    <select id="estado_civil" name="estado_civil" required>
                         <option value=""> </option>
                         <option id= "opcion1" value="casado">Casado</option>
                         <option id= "opcion2" value="divorciado">Divorciado</option>
@@ -91,14 +91,13 @@
     <script src="/static/js/index_datos_personales.js"></script>
 
     <script>
-<<<<<<< HEAD
         document.getElementById("flecha_volver").addEventListener("click", function() {
             window.location.href = "/";  
-=======
+            });
+
         document.getElementById("continuar").addEventListener("click", function() {
             e.preventDefault();
             window.location.href = "/pais";  
->>>>>>> 2be151640eda0dfb06d7016ede90600c9f72b160
         });
     </script>
 </body>
