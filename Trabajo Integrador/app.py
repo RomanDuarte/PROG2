@@ -150,7 +150,14 @@ def api_modificar_datos(id):
     usuario.password = datos.get('password', usuario.password)
 
     db.session.commit()
-    return jsonify({'mensaje': 'Usuario actualizado correctamente'})
+    return jsonify({'mensaje': 'Usuario actualizado correctamente',
+                    "nombre": usuario.nombre,
+                    "apellido": usuario.apellido,
+                    "email": usuario.email,
+                    "saldo": usuario.saldo,
+                    "id":usuario.id,
+                    "user": usuario.user
+                    })
 
 
 # # API eliminar cuenta

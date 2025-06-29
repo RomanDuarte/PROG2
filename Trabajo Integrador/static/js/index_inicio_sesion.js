@@ -6,8 +6,8 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
     const passwordValida = validarPassword();
 
     if (!usuarioValido || !passwordValida) {
-        
         alert("Por favor completá correctamente todos los campos.");
+        e.preventDefault()
     }   
 const user = document.getElementById("usuario").value;
 const contra = document.getElementById("password").value;

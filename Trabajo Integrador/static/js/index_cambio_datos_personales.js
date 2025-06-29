@@ -1,4 +1,5 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault()
     const nombreValido = validarNombre();
     const apellidoValido = validarApellido();
     const fechaValida = validarFecha();
@@ -11,10 +12,43 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     if (!nombreValido || !apellidoValido || !fechaValida || !generoValido || !estadoValido || !emailValido || !usuarioValido || !passwordValida) {
         e.preventDefault();
     } else {
-        e.preventDefault();
-        window.location.href = '/pais';
+    const idUsuario = localStorage.getItem("id");  
+    const datosActualizados = {
+    nombre: document.getElementById("primer_nombre").value,
+    apellido: document.getElementById("apellido").value,
+    fecha_nacimiento: document.getElementById("fecha_nacimiento").value,
+    genero: document.getElementById("genero").value,
+    estado_civil: document.getElementById("estado_civil").value,
+    email: document.getElementById("email").value,
+    usuario: document.getElementById("usuario").value,
+    clave: document.getElementById("password").value
+    };
+    fetch(`/api/usuarios/${idUsuario}`, {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(datosActualizados)
+    })
+    .then(res => res.json())
+    .then(data => {
+    if (data.mensaje) {
+        alert("Datos actualizados correctamente");
+            localStorage.setItem("nombre", data.nombre);
+            localStorage.setItem("apellidos", data.apellido);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("saldo", data.saldo);
+            localStorage.setItem("id", data.id);
+            window.location.href = "/inicio";
+    } else {
+        alert("Hubo un error al actualizar: " + (data.error || "desconocido"));
     }
-});
+    })
+    .catch(err => {
+    console.error("Error de red o servidor:", err);
+    });
+    }
+    });
 
 function validarNombre() {
     const nombre = document.getElementById("primer_nombre").value.trim();
@@ -101,7 +135,7 @@ function validarEstadoCivil() {
 
 function validarEmail() {
     const email = document.getElementById("email").value.trim();
-    const error = document.getElementById("error_email");
+    const error = document.getElementById("error_correo_electronico");
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (email === "") {
@@ -176,17 +210,3 @@ document.getElementById("password").addEventListener('input', validarPassword);
 document.getElementById("password").addEventListener('blur', validarPassword);
 
 
-document.getElementById("continuar").addEventListener("click", function () {
-    const nombreValido = validarNombre();
-    const apellidoValido = validarApellido();
-    const fechaValida = validarFecha();
-    const generoValido = validarGenero();
-    const estadoValido = validarEstadoCivil();
-    const emailValido = validarEmail();
-    const usuarioValido = validarUsuario();
-    const passwordValida = validarPassword();
-
-    if (nombreValido && apellidoValido && fechaValida && generoValido && estadoValido && emailValido && usuarioValido && passwordValida) {
-        document.getElementById("formulario").dispatchEvent(new Event('submit'));
-    }
-});
