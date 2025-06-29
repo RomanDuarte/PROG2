@@ -1,7 +1,7 @@
 document.getElementById("formulario").addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    const confirmacion = confirm("¿Estás seguro de que querés eliminar tu cuenta? Esta acción es irreversible.");
+     const confirmacion = confirm("¿Estás seguro de que querés eliminar tu cuenta? Esta acción es irreversible.");
     if (!confirmacion) return;
 
     const usuario = document.getElementById("usuario").value.trim();
@@ -18,7 +18,7 @@ document.getElementById("formulario").addEventListener("submit", async function(
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ usuario, clave })
+            body: JSON.stringify({ usuario:usuario, clave:clave })
         });
 
         const data = await response.json();

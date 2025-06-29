@@ -159,7 +159,7 @@ def delete_usuario_completo():
     datos = request.get_json()
 
     nombre_usuario = datos.get('usuario')
-    clave = datos.get('clave', '')
+    clave = datos.get('clave')
 
     if not nombre_usuario or not clave:
         return jsonify({'error': 'Faltan datos'}), 400
