@@ -1,25 +1,21 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault(); // Siempre prevenir por defecto
+
     const calleValida = validarCalle();
     const alturaValida = validarAltura();
     const ciudadValida = validarCiudad();
     const provinciaValida = validarProvincia();
 
-    if (!calleValida || !alturaValida || !ciudadValida || !provinciaValida) {
-        e.preventDefault();
-    }else {
-        e.preventDefault();
-        
+    if (calleValida && alturaValida && ciudadValida && provinciaValida) {
+        window.location.href = '/email';
     }
-
-    window.location.href = '/email';
-
 
 });
 
 function validarCalle() {
     const calle = document.getElementById("calle").value.trim();
     const error = document.getElementById("error_calle");
-    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/;
+    const regex = /^[a-zA-Z0-9\s]+$/;
 
     if (calle === "") {
         error.textContent = "Debe ingresar una calle.";

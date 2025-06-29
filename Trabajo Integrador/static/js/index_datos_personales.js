@@ -1,26 +1,27 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+
     const nombreValido = validarNombre();
     const apellidoValido = validarApellido();
     const fechaValida = validarFecha();
     const generoValido = validarGenero();
     const estadoValido = validarEstadoCivil();
 
-    if (!nombreValido || !apellidoValido || !fechaValida || !generoValido || !estadoValido) {
-        e.preventDefault();
-    } else {
-        e.preventDefault();      
-    }
-        const new_nombre=document.getElementById('primer_nombre').value
-        const new_apellido=document.getElementById('apellido').value
-        const new_fecha_nacimiento=document.getElementById('fecha_nacimiento').value
-        const new_genero=document.getElementById('genero').value
-        const new_estado_civil=document.getElementById('estado_civil').value
-        localStorage.setItem("register_nombre",new_nombre );
-        localStorage.setItem("register_apellido",new_apellido );
+    if (nombreValido && apellidoValido && fechaValida && generoValido && estadoValido) {
+        const new_nombre = document.getElementById('primer_nombre').value;
+        const new_apellido = document.getElementById('apellido').value;
+        const new_fecha_nacimiento = document.getElementById('fecha_nacimiento').value;
+        const new_genero = document.getElementById('genero').value;
+        const new_estado_civil = document.getElementById('estado_civil').value;
+
+        localStorage.setItem("register_nombre", new_nombre);
+        localStorage.setItem("register_apellido", new_apellido);
         localStorage.setItem("register_fecha_nacimiento", new_fecha_nacimiento);
         localStorage.setItem("register_genero", new_genero);
         localStorage.setItem("register_estado_civil", new_estado_civil);
+
         window.location.href = '/pais';
+    }
 });
 
 function validarNombre() {

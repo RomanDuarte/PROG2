@@ -40,7 +40,6 @@ fetch("/api/registro", {
 .then(res => res.json())
 .then(data => {
     if (data.status === "ok") {
-        alert("Registro exitoso");
         window.location.href = "/login";
     } else {
          document.getElementById("error_usuario").textContent = "Nombre de usuario ya registrado";

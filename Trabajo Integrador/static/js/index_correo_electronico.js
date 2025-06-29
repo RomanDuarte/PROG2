@@ -1,12 +1,11 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+
     const emailValido = validarEmail();
 
-    if (!emailValido) {
-        e.preventDefault();
-    }else {
-        e.preventDefault();
-        const new_email=document.getElementById('email').value
-        localStorage.setItem("register_email",new_email );
+    if (emailValido) {
+        const new_email = document.getElementById('email').value;
+        localStorage.setItem("register_email", new_email);
         window.location.href = "/condiciones";
     }
 });

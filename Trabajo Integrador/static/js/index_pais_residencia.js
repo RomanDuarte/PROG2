@@ -1,16 +1,15 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+
     const paisValido = validarPais();
 
-    if (!paisValido) {
-        e.preventDefault();
-    }else {
-        e.preventDefault();
-    }
-
-        const new_pais=document.getElementById('pais').value
-        localStorage.setItem("register_pais",new_pais );
+    if (paisValido) {
+        const new_pais = document.getElementById('pais').value;
+        localStorage.setItem("register_pais", new_pais);
         window.location.href = '/datos_domicilio';
+    }
 });
+
 
 function validarPais() {
     const pais = document.getElementById("pais");
