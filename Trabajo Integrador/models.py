@@ -14,6 +14,10 @@ class Usuario(db.Model):
     genero = db.Column(db.String(50), nullable=False)
     estado_civil=db.Column(db.String(50), nullable=False)
     saldo = db.Column(db.Float, default=0.0)
+    domicilio = db.Column(db.String(80), nullable=False)
+    pisoOdepartamento = db.Column(db.String(50), nullable=True)
+    ciudad = db.Column(db.String(50), nullable=False)
+    provincia = db.Column(db.String(50), nullable=False)
 
     transferencias_enviadas = db.relationship('Transferencia', foreign_keys='Transferencia.emisor_id', backref='emisor', lazy=True)
     transferencias_recibidas = db.relationship('Transferencia', foreign_keys='Transferencia.receptor_id', backref='receptor', lazy=True)

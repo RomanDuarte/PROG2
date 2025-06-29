@@ -13,10 +13,10 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
     if not Usuario.query.first():
-        u1 = Usuario(user="admin", email="admin@mail.com", password=generate_password_hash("1234"),pais='China', nombre="Admin", apellido="admin",fecha_nacimiento="1/1/1900",genero="no binario",estado_civil="viudo" ,saldo=999999)
-        u2 = Usuario(user="Franco", email="francopascu7@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Franco", apellido="Pascua",fecha_nacimiento="9/9/2001",genero="Masculino",estado_civil="Soltero", saldo=5000)
-        u3 = Usuario(user="Martina", email="Martina@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Martina", apellido="Masanes",fecha_nacimiento="9/9/1990",genero="Femenino",estado_civil="Soltero", saldo=5000)
-        u4 = Usuario(user="Ulises", email="ulises7@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Ulises", apellido="Gunetti",fecha_nacimiento="9/9/2005",genero="Masculino",estado_civil="Soltero" ,saldo=5000)
+        u1 = Usuario(user="admin", email="admin@mail.com", password=generate_password_hash("1234"),pais='China', nombre="Admin", apellido="admin",fecha_nacimiento="2000-05-25",genero="no binario",estado_civil="viudo" ,saldo=999999,domicilio='Comodoro rivadavia',ciudad='rosario',provincia='santa fe')
+        u2 = Usuario(user="Franco", email="francopascu7@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Franco", apellido="Pascua",fecha_nacimiento="92000-05-25",genero="Masculino",estado_civil="Soltero", saldo=5000,domicilio='Comodoro rivadavia',ciudad='rosario',provincia='santa fe')
+        u3 = Usuario(user="Martina", email="Martina@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Martina", apellido="Masanes",fecha_nacimiento="2000-05-25",genero="Femenino",estado_civil="Soltero", saldo=5000,domicilio='Comodoro rivadavia',ciudad='rosario',provincia='santa fe')
+        u4 = Usuario(user="Ulises", email="ulises7@gmail.com", password=generate_password_hash("123456"),pais='Argentina', nombre="Ulises", apellido="Gunetti",fecha_nacimiento="2000-05-25",genero="Masculino",estado_civil="Soltero" ,saldo=5000,domicilio='Comodoro rivadavia',ciudad='rosario',provincia='santa fe')
         db.session.add_all([u1, u2, u3, u4])
         db.session.commit()
 
@@ -119,6 +119,10 @@ def api_registro():
     estado_civil = data.get("estado_civil")
     fecha_nacimiento = data.get("fecha_nacimiento")
     pais=data.get('pais')
+    domicilio= data.get('domicilio')
+    pisoOdepartamento= data.get('pisoOdepartamento')
+    ciudad= data.get('ciudad')
+    provincia= data.get('provincia')
 
     # Validar que no exista ya el usuario o el email
     if Usuario.query.filter_by(user=usuario).first():
@@ -126,7 +130,7 @@ def api_registro():
     if Usuario.query.filter_by(email=email).first():
         return jsonify({'status': 'error', 'mensaje': 'Email ya registrado'}), 400
 
-    nuevo_usuario = Usuario(user=usuario, email=email, password=generate_password_hash(clave),pais=pais, nombre=nombre, apellido=apellido,fecha_nacimiento=fecha_nacimiento,genero=genero,estado_civil=estado_civil,saldo=0)
+    nuevo_usuario = Usuario(user=usuario, email=email, password=generate_password_hash(clave),pais=pais, nombre=nombre, apellido=apellido,fecha_nacimiento=fecha_nacimiento,genero=genero,estado_civil=estado_civil,saldo=0,domicilio=domicilio,pisoOdepartamento=pisoOdepartamento,ciudad=ciudad,provincia=provincia)
     db.session.add(nuevo_usuario)
     db.session.commit()
     return jsonify({'status': 'ok'})
@@ -146,8 +150,8 @@ def api_modificar_datos(id):
     usuario.genero = datos.get('genero', usuario.genero)
     usuario.estado_civil = datos.get('estado_civil', usuario.estado_civil)
     usuario.email = datos.get('email', usuario.email)
-    usuario.user = datos.get('user', usuario.user)
-    usuario.password = datos.get('password', usuario.password)
+    usuario.user = datos.get('usuario')
+    usuario.password =generate_password_hash(datos.get('clave',usuario.password))
 
     db.session.commit()
     return jsonify({'mensaje': 'Usuario actualizado correctamente',

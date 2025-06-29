@@ -7,6 +7,12 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const provinciaValida = validarProvincia();
 
     if (calleValida && alturaValida && ciudadValida && provinciaValida) {
+        ciudad = document.getElementById("ciudad").value;
+        provincia = document.getElementById("provincia").value;
+        domicilio=document.getElementById("calle").value.trim() + " " + document.getElementById("altura").value;
+        localStorage.setItem("domicilio", domicilio);
+        localStorage.setItem("ciudad", ciudad);
+        localStorage.setItem("provincia", provincia);
         window.location.href = '/email';
     }
 

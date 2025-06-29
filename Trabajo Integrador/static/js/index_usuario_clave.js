@@ -20,6 +20,9 @@ const genero = localStorage.getItem("register_genero");
 const estado_civil = localStorage.getItem("register_estado_civil");
 const pais = localStorage.getItem("register_pais");
 const email = localStorage.getItem("register_email");
+const ciudad = localStorage.getItem("ciudad");
+const domicilio = localStorage.getItem("domicilio");
+const provincia = localStorage.getItem("provincia");
 
 fetch("/api/registro", {
     method: "POST",
@@ -33,7 +36,10 @@ fetch("/api/registro", {
         email: email,
         genero: genero,
         pais:pais,
-        estado_civil: estado_civil
+        estado_civil: estado_civil,
+        ciudad: ciudad,
+        domicilio: domicilio,
+        provincia: provincia
     })
 })
 
@@ -42,7 +48,7 @@ fetch("/api/registro", {
     if (data.status === "ok") {
         window.location.href = "/login";
     } else {
-         document.getElementById("error_usuario").textContent = "Nombre de usuario ya registrado";
+        document.getElementById("error_usuario").textContent = "Nombre de usuario ya registrado";
     }
 })
 .catch(err => {
