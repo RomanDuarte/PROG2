@@ -79,11 +79,13 @@
 <script src="/static/js/index_condiciones_legales.js"></script>
 
   <script>
-    document.getElementById("continuar").addEventListener("click", function() {
-      window.location.href = "crear_usuario_clave";  
-});
-    document.getElementById("fecha_retroceder").addEventListener("click", function() {
-      window.location.href = "/email";  
+    document.getElementById("flecha_volver").addEventListener("click", function() {
+            window.location.href = "/email";  
+            });
+
+        document.getElementById("continuar").addEventListener("click", function() {
+            e.preventDefault();
+            window.location.href = "/crear_usuario_clave";  
         });
   </script>
 </body>

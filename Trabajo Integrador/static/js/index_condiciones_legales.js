@@ -1,6 +1,5 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
     e.preventDefault();
-
     const opcionesSeleccionadas = validarOpciones();
 
     if (opcionesSeleccionadas) {
@@ -10,6 +9,7 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
 
 function validarOpciones() {
     const error = document.getElementById("error_condiciones");
+
     const checkboxes = [
         document.getElementById("opcion_1"),
         document.getElementById("opcion_2"),
@@ -17,7 +17,7 @@ function validarOpciones() {
         document.getElementById("opcion_4"),
     ];
 
-    const algunaSeleccionada = checkboxes.some(chk => chk.checked);
+    const algunaSeleccionada = checkboxes.some((chk) => chk.checked);
 
     if (!algunaSeleccionada) {
         error.textContent = "Debe seleccionar al menos una opción.";
@@ -28,8 +28,12 @@ function validarOpciones() {
     }
 }
 
-document.getElementById("formulario").addEventListener("submit", function (e) {
-    e.preventDefault();
-    window.location.href = '/crear_usuario_clave';
-    
+["eopcion_1", "eopcion_2", "eopcion_3", "eopcion_4"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('blur', validarOpciones);
 });
+
+document.getElementById("fecha_retroceder").addEventListener("click", function () {
+    window.location.href = "/email";
+});
+
